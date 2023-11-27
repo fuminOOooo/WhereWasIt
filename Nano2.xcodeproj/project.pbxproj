@@ -332,7 +332,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nano2/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Where Was It?";
+				INFOPLIST_KEY_CFBundleDisplayName = "WhereWasIt?";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs to access your location.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -373,7 +373,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nano2/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Where Was It?";
+				INFOPLIST_KEY_CFBundleDisplayName = "WhereWasIt?";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs to access your location.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
