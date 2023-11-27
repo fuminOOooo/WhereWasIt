@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1508DC642A1F4EAC00673445 /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1508DC632A1F4EAC00673445 /* SF-Pro.ttf */; };
 		1508DC662A1FC05200673445 /* FirstTimeModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1508DC652A1FC05200673445 /* FirstTimeModal.swift */; };
 		1508DC682A1FCB8300673445 /* InfoModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1508DC672A1FCB8300673445 /* InfoModal.swift */; };
 		155830A52A1E99930065D51B /* Nano2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830A42A1E99930065D51B /* Nano2App.swift */; };
@@ -21,10 +20,11 @@
 		155830BF2A1EA4200065D51B /* LandmarkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830BE2A1EA4200065D51B /* LandmarkConstants.swift */; };
 		155830C32A1F03460065D51B /* ConfirmationModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830C22A1F03460065D51B /* ConfirmationModal.swift */; };
 		155830C52A1F044B0065D51B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830C42A1F044B0065D51B /* CustomButton.swift */; };
+		15AF23742B149CFE0075F7D8 /* SF-Pro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15AF23722B149CFE0075F7D8 /* SF-Pro-Italic.ttf */; };
+		15AF23752B149CFE0075F7D8 /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15AF23732B149CFE0075F7D8 /* SF-Pro.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1508DC632A1F4EAC00673445 /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro.ttf"; path = "../../../../../Library/Fonts/SF-Pro.ttf"; sourceTree = "<group>"; };
 		1508DC652A1FC05200673445 /* FirstTimeModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeModal.swift; sourceTree = "<group>"; };
 		1508DC672A1FCB8300673445 /* InfoModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModal.swift; sourceTree = "<group>"; };
 		155830A12A1E99930065D51B /* Nano2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nano2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +41,8 @@
 		155830BE2A1EA4200065D51B /* LandmarkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkConstants.swift; sourceTree = "<group>"; };
 		155830C22A1F03460065D51B /* ConfirmationModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationModal.swift; sourceTree = "<group>"; };
 		155830C42A1F044B0065D51B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		15AF23722B149CFE0075F7D8 /* SF-Pro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Italic.ttf"; sourceTree = "<group>"; };
+		15AF23732B149CFE0075F7D8 /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +84,6 @@
 				155830AD2A1E99950065D51B /* Assets.xcassets */,
 				155830AF2A1E99950065D51B /* Nano2.entitlements */,
 				155830A82A1E99930065D51B /* Nano2.xcdatamodeld */,
-				1508DC632A1F4EAC00673445 /* SF-Pro.ttf */,
 				155830B02A1E99950065D51B /* Preview Content */,
 			);
 			path = Nano2;
@@ -91,6 +92,8 @@
 		155830B02A1E99950065D51B /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				15AF23722B149CFE0075F7D8 /* SF-Pro-Italic.ttf */,
+				15AF23732B149CFE0075F7D8 /* SF-Pro.ttf */,
 				155830B12A1E99950065D51B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -176,8 +179,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				155830B22A1E99950065D51B /* Preview Assets.xcassets in Resources */,
-				1508DC642A1F4EAC00673445 /* SF-Pro.ttf in Resources */,
 				155830AE2A1E99950065D51B /* Assets.xcassets in Resources */,
+				15AF23742B149CFE0075F7D8 /* SF-Pro-Italic.ttf in Resources */,
+				15AF23752B149CFE0075F7D8 /* SF-Pro.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +349,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.myorganization.Nano2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ElvisSusanto.WhereWasIt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -386,7 +390,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.myorganization.Nano2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ElvisSusanto.WhereWasIt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";

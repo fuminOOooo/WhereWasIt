@@ -64,8 +64,6 @@ struct MapView: UIViewRepresentable {
     
     func updateUIView(_ uiView: MKMapView, context: UIViewRepresentableContext<MapView>) {
         
-        updateAnnotations(from: uiView)
-        
         if let userTrackingButton = uiView.subviews.first(where: { $0 is MKUserTrackingButton }) as? MKUserTrackingButton {
             userTrackingButton.frame = CGRect(origin: CGPoint(x: 345, y: 620), size: CGSize(width: 35, height: 35))
         } else {
@@ -76,6 +74,8 @@ struct MapView: UIViewRepresentable {
             userTrackingButton.layer.opacity = 1
             uiView.addSubview(userTrackingButton)
         }
+        
+        updateAnnotations(from: uiView)
         
         if landmarkSearched == true && !landmark.isEmpty {
             uiView.setCenter(landmark[0].coordinate, animated: true)
