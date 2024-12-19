@@ -12,61 +12,48 @@ struct FirstTimeModal: View {
     
     var body: some View {
         
-        VStack () {
+        VStack (alignment: .leading) {
             
             VStack (alignment: .leading) {
                 
                 Text("Welcome to")
-                    .font(Font.custom("SF-Pro-Text-Light", size: 14))
-                    .foregroundColor(Color.white)
+                    .font(CustomFont.lightText14)
                 
                 Text("Where Was It?")
-                    .font(Font.custom("SFPro-ExpandedBold", size: 28))
-                    .foregroundColor(Color.white)
+                    .font(CustomFont.expandedBold)
                 
                 Divider()
                     .overlay(Color.white)
-                    .frame(width: 260)
                     .padding(.bottom)
                 
-                Text("An app created for your sudden")
-                    .font(Font.custom("SF-Pro-Text-Light", size: 17))
-                    .foregroundColor(Color.white)
-                
-                Text("\"I'll visit this place again later,")
-                    .font(Font.custom("SF-Pro-Text-Light", size: 17))
-                    .foregroundColor(Color.white)
-                
-                Text("gotta note it just in case..\"")
-                    .font(Font.custom("SF-Pro-Text-Light", size: 17))
-                    .foregroundColor(Color.white)
-                
-                Text("type of situations.")
-                    .font(Font.custom("SF-Pro-Text-Light", size: 17))
-                    .foregroundColor(Color.white)
+                Text(
+                    "An app created for your sudden \"I'll visit this place again later, gotta note it just in case..\" type of situations."
+                )
+                .font(CustomFont.lightText17)
                 
             }
-            .frame(minWidth: 250)
-            .padding()
+            .foregroundColor(Color.white)
+            .padding(.bottom)
             
             Button {
-                firstTime.toggle()
+                
+                withAnimation {
+                    firstTime.toggle()
+                }
+                
             } label: {
+                
                 Text("Get started")
-                    .frame(maxWidth: 270)
+                
             }
             .buttonStyle(FillButton())
             
-            
         }
-        .padding(.init(top: 24, leading: 20, bottom: 24, trailing: 20))
-        .frame(maxWidth: 306)
-        .background(Color(#colorLiteral(red: 0.122528699, green: 0.1234056122, blue: 0.1218643707, alpha: 1)))
-        .cornerRadius(15)
-        .opacity(firstTime ? 1 : 0)
-        .scaleEffect(firstTime ? 1 : 0)
-        .animation(.spring(response: 0.4, dampingFraction: 0.8))
-        .transition(.move(edge: .bottom))
+        .padding()
+        .background(CustomColor.darkGray)
+        .cornerRadius(8)
+        .padding()
+        
     }
     
 }
