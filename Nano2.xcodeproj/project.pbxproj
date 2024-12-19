@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1508DC662A1FC05200673445 /* FirstTimeModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1508DC652A1FC05200673445 /* FirstTimeModal.swift */; };
+		1508DC662A1FC05200673445 /* MiddlePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1508DC652A1FC05200673445 /* MiddlePopupView.swift */; };
 		1508DC682A1FCB8300673445 /* InfoModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1508DC672A1FCB8300673445 /* InfoModal.swift */; };
 		155830A52A1E99930065D51B /* Nano2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830A42A1E99930065D51B /* Nano2App.swift */; };
 		155830A72A1E99930065D51B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830A62A1E99930065D51B /* Persistence.swift */; };
@@ -22,10 +22,16 @@
 		155830C52A1F044B0065D51B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830C42A1F044B0065D51B /* CustomButton.swift */; };
 		15AF23742B149CFE0075F7D8 /* SF-Pro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15AF23722B149CFE0075F7D8 /* SF-Pro-Italic.ttf */; };
 		15AF23752B149CFE0075F7D8 /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15AF23732B149CFE0075F7D8 /* SF-Pro.ttf */; };
+		A1F4C61F2D13F56000FA09B2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C61E2D13F55D00FA09B2 /* Constants.swift */; };
+		A1F4C6212D13F57100FA09B2 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C6202D13F56C00FA09B2 /* CustomFont.swift */; };
+		A1F4C6232D13FC5B00FA09B2 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C6222D13FC5800FA09B2 /* CustomColor.swift */; };
+		A1F4C6252D13FDD400FA09B2 /* NewMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C6242D13FDCF00FA09B2 /* NewMainView.swift */; };
+		A1F4C6282D13FDF000FA09B2 /* NewMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C6272D13FDED00FA09B2 /* NewMainViewModel.swift */; };
+		A1F4C62D2D140F2E00FA09B2 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C62C2D140F2600FA09B2 /* UserDefaultsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1508DC652A1FC05200673445 /* FirstTimeModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeModal.swift; sourceTree = "<group>"; };
+		1508DC652A1FC05200673445 /* MiddlePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddlePopupView.swift; sourceTree = "<group>"; };
 		1508DC672A1FCB8300673445 /* InfoModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModal.swift; sourceTree = "<group>"; };
 		155830A12A1E99930065D51B /* Nano2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nano2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		155830A42A1E99930065D51B /* Nano2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano2App.swift; sourceTree = "<group>"; };
@@ -43,6 +49,12 @@
 		155830C42A1F044B0065D51B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		15AF23722B149CFE0075F7D8 /* SF-Pro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Italic.ttf"; sourceTree = "<group>"; };
 		15AF23732B149CFE0075F7D8 /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
+		A1F4C61E2D13F55D00FA09B2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A1F4C6202D13F56C00FA09B2 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
+		A1F4C6222D13FC5800FA09B2 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		A1F4C6242D13FDCF00FA09B2 /* NewMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMainView.swift; sourceTree = "<group>"; };
+		A1F4C6272D13FDED00FA09B2 /* NewMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMainViewModel.swift; sourceTree = "<group>"; };
+		A1F4C62C2D140F2600FA09B2 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +87,8 @@
 		155830A32A1E99930065D51B /* Nano2 */ = {
 			isa = PBXGroup;
 			children = (
+				A1F4C62B2D140F1B00FA09B2 /* Services */,
+				A1F4C61D2D13F54D00FA09B2 /* Shared */,
 				155830C12A1EA4F60065D51B /* Views */,
 				155830C02A1EA4E80065D51B /* Models */,
 				155830BB2A1E9C1D0065D51B /* Info.plist */,
@@ -110,14 +124,42 @@
 		155830C12A1EA4F60065D51B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A1F4C6262D13FDE400FA09B2 /* MainView */,
 				155830BC2A1E9D320065D51B /* MapView.swift */,
-				155830AB2A1E99930065D51B /* MainView.swift */,
 				155830C22A1F03460065D51B /* ConfirmationModal.swift */,
 				155830C42A1F044B0065D51B /* CustomButton.swift */,
-				1508DC652A1FC05200673445 /* FirstTimeModal.swift */,
+				1508DC652A1FC05200673445 /* MiddlePopupView.swift */,
 				1508DC672A1FCB8300673445 /* InfoModal.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A1F4C61D2D13F54D00FA09B2 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A1F4C6222D13FC5800FA09B2 /* CustomColor.swift */,
+				A1F4C6202D13F56C00FA09B2 /* CustomFont.swift */,
+				A1F4C61E2D13F55D00FA09B2 /* Constants.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		A1F4C6262D13FDE400FA09B2 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				A1F4C6272D13FDED00FA09B2 /* NewMainViewModel.swift */,
+				A1F4C6242D13FDCF00FA09B2 /* NewMainView.swift */,
+				155830AB2A1E99930065D51B /* MainView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		A1F4C62B2D140F1B00FA09B2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A1F4C62C2D140F2600FA09B2 /* UserDefaultsService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,16 +235,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				155830C32A1F03460065D51B /* ConfirmationModal.swift in Sources */,
+				A1F4C6252D13FDD400FA09B2 /* NewMainView.swift in Sources */,
 				155830BF2A1EA4200065D51B /* LandmarkConstants.swift in Sources */,
 				155830C52A1F044B0065D51B /* CustomButton.swift in Sources */,
+				A1F4C6212D13F57100FA09B2 /* CustomFont.swift in Sources */,
 				155830BA2A1E9A0D0065D51B /* LocationManager.swift in Sources */,
 				155830BD2A1E9D320065D51B /* MapView.swift in Sources */,
-				1508DC662A1FC05200673445 /* FirstTimeModal.swift in Sources */,
+				1508DC662A1FC05200673445 /* MiddlePopupView.swift in Sources */,
 				155830A52A1E99930065D51B /* Nano2App.swift in Sources */,
+				A1F4C6232D13FC5B00FA09B2 /* CustomColor.swift in Sources */,
+				A1F4C62D2D140F2E00FA09B2 /* UserDefaultsService.swift in Sources */,
 				155830A72A1E99930065D51B /* Persistence.swift in Sources */,
 				1508DC682A1FCB8300673445 /* InfoModal.swift in Sources */,
+				A1F4C6282D13FDF000FA09B2 /* NewMainViewModel.swift in Sources */,
 				155830AC2A1E99930065D51B /* MainView.swift in Sources */,
 				155830AA2A1E99930065D51B /* Nano2.xcdatamodeld in Sources */,
+				A1F4C61F2D13F56000FA09B2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,7 +392,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
@@ -385,7 +433,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;

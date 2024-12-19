@@ -323,8 +323,13 @@ struct MainView: View {
             if firstTime == true {
                 Color.black.opacity(0.9)
                     .edgesIgnoringSafeArea(.all)
-                FirstTimeModal(firstTime: $firstTime)
-                    .zIndex(1)
+                MiddlePopupView(
+                    shown: $firstTime,
+                    buttonText: "Get Started"
+                ) {
+                    
+                }
+                .zIndex(1)
             }
             
         }

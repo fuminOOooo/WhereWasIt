@@ -7,6 +7,23 @@
 
 import SwiftUI
 
+enum CustomButton {
+    case CustomFillButton
+    case CustomBorderButton
+}
+
+extension View {
+    
+    func withFillButtonStyle() -> some View {
+        buttonStyle(FillButton())
+    }
+    
+    func withBorderButtonStyle() -> some View {
+        buttonStyle(BorderButton())
+    }
+    
+}
+
 struct FillButton: ButtonStyle {
     
     func makeBody(configuration: Configuration) -> some View {
@@ -16,7 +33,7 @@ struct FillButton: ButtonStyle {
             .padding()
             .background(configuration.isPressed ? Color.gray : Color.black)
             .overlay(
-                RoundedRectangle(cornerRadius: 6)
+                RoundedRectangle(cornerRadius: NumberConstant.defaultCornerRadiusSize)
                     .stroke(configuration.isPressed ? Color.gray : Color.black)
             )
             .cornerRadius(6)
@@ -26,6 +43,7 @@ struct FillButton: ButtonStyle {
 }
 
 struct BorderButton: ButtonStyle {
+    
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(Font.custom("Fredoka-Medium", size: 16))
@@ -39,4 +57,5 @@ struct BorderButton: ButtonStyle {
             .cornerRadius(6)
             .foregroundColor(configuration.isPressed ? Color.gray : Color.gray)
     }
+    
 }
