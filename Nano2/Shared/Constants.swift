@@ -17,6 +17,22 @@ public final class StringConstant {
     
     public static let mainViewText4 = "An app created for your sudden \"I'll visit this place again later, gotta note it just in case..\" type of situations."
     
+    public static let settingsButtonText = "Settings"
+    
+    public static let pinButtonText = "Save Here"
+    
+    public static let listButtonText = "Archives"
+    
+}
+
+public final class ImageNameConstant {
+    
+    public static let settingsButtonImage = "gear.circle.fill"
+    
+    public static let pinButtonImage = "mappin.and.ellipse.circle.fill"
+    
+    public static let listButtonImage = "list.bullet.circle.fill"
+    
 }
 
 public final class NumberConstant {

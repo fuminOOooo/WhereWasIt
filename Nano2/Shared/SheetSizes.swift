@@ -10,8 +10,8 @@ import SwiftUI
 
 enum SheetSizes: CGFloat, CaseIterable {
     
-    case peek = 0.15
-    case detailed = 0.9
+    case peek = 0.26
+    case detailed = 1
 
     var detent: PresentationDetent {
         .fraction(rawValue)

@@ -12,7 +12,6 @@ struct MainSheetView: View {
     
     @State private var expanded = false
     @StateObject var vm : MainSheetViewModel = MainSheetViewModel()
-    
     @State private var currentDetent : PresentationDetent = SheetSizes.peek.detent
     
     var body: some View {
@@ -22,17 +21,34 @@ struct MainSheetView: View {
             if expanded {
                 
                 Text("NOT SHOWING buttons")
+                    .font(.title2)
+                    .bold()
                 // TODO: Add actions view when sheet is expanded
                 
             } else {
                 
                 Text("SHOWING buttons")
-                // TODO: Add actions view when sheet is not expanded
+                    .font(.title2)
+                    .bold()
+                // TODO: Add functionality to check saved locations
+                
+                PeekDetentView(
+                    settingsButtonAction: {
+                        
+                    },
+                    pinButtonAction: {
+                        
+                    },
+                    archivesButtonAction: {
+                        
+                    }
+                )
                 
             }
             
         }
         .animation(.easeInOut, value: expanded)
+        .padding(.top)
         .presentationDetents(SheetSizes.detents, selection: $currentDetent)
         .presentationBackgroundInteraction(.enabled(upThrough: SheetSizes.peek.detent))
         .presentationDragIndicator(Visibility.hidden)
@@ -41,8 +57,6 @@ struct MainSheetView: View {
         .onChange(of: currentDetent, {
             
             Task {
-                
-                try? await Task.sleep(for: .milliseconds(NumberConstant.defaultAnimationSleepMillisecondValue))
                 
                 await MainActor.run {
                     switch currentDetent {
@@ -53,6 +67,7 @@ struct MainSheetView: View {
                     default: break
                     }
                 }
+                
             }
             
         })

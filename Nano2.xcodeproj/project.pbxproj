@@ -29,6 +29,8 @@
 		A1086C632D15545600C90A95 /* MainSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C622D15545300C90A95 /* MainSheetView.swift */; };
 		A1086C652D15545C00C90A95 /* MainSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C642D15545900C90A95 /* MainSheetViewModel.swift */; };
 		A1086C672D15615600C90A95 /* SheetSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C662D15615000C90A95 /* SheetSizes.swift */; };
+		A1086C6B2D156A6B00C90A95 /* PeekDetentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C6A2D156A6800C90A95 /* PeekDetentView.swift */; };
+		A1086C6D2D156A7400C90A95 /* PeekDetentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C6C2D156A7000C90A95 /* PeekDetentViewModel.swift */; };
 		A1F4C61F2D13F56000FA09B2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C61E2D13F55D00FA09B2 /* Constants.swift */; };
 		A1F4C6212D13F57100FA09B2 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C6202D13F56C00FA09B2 /* CustomFont.swift */; };
 		A1F4C6232D13FC5B00FA09B2 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C6222D13FC5800FA09B2 /* CustomColor.swift */; };
@@ -63,6 +65,8 @@
 		A1086C622D15545300C90A95 /* MainSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSheetView.swift; sourceTree = "<group>"; };
 		A1086C642D15545900C90A95 /* MainSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSheetViewModel.swift; sourceTree = "<group>"; };
 		A1086C662D15615000C90A95 /* SheetSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetSizes.swift; sourceTree = "<group>"; };
+		A1086C6A2D156A6800C90A95 /* PeekDetentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekDetentView.swift; sourceTree = "<group>"; };
+		A1086C6C2D156A7000C90A95 /* PeekDetentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekDetentViewModel.swift; sourceTree = "<group>"; };
 		A1F4C61E2D13F55D00FA09B2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A1F4C6202D13F56C00FA09B2 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		A1F4C6222D13FC5800FA09B2 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
@@ -101,11 +105,10 @@
 		155830A32A1E99930065D51B /* Nano2 */ = {
 			isa = PBXGroup;
 			children = (
-				A1086C5F2D15471100C90A95 /* CoreData */,
+				A1086C6E2D1576C100C90A95 /* Legacy */,
 				A1F4C62B2D140F1B00FA09B2 /* Services */,
 				A1F4C61D2D13F54D00FA09B2 /* Shared */,
 				155830C12A1EA4F60065D51B /* Views */,
-				155830C02A1EA4E80065D51B /* Models */,
 				155830BB2A1E9C1D0065D51B /* Info.plist */,
 				155830A42A1E99930065D51B /* Nano2App.swift */,
 				155830B92A1E9A0D0065D51B /* LocationManager.swift */,
@@ -126,23 +129,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		155830C02A1EA4E80065D51B /* Models */ = {
+		155830C02A1EA4E80065D51B /* OldModels */ = {
 			isa = PBXGroup;
 			children = (
 				155830BE2A1EA4200065D51B /* LandmarkConstants.swift */,
 			);
-			path = Models;
+			path = OldModels;
 			sourceTree = "<group>";
 		};
 		155830C12A1EA4F60065D51B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A1086C692D156A5500C90A95 /* PeekDetentView */,
 				A1086C612D15544800C90A95 /* MainSheetView */,
 				A1086C502D1510CD00C90A95 /* FirstTimeOpenView */,
 				A1086C532D151E7700C90A95 /* MainMapView */,
 				A1F4C6262D13FDE400FA09B2 /* MainView */,
 				A1086C492D150F4800C90A95 /* Components */,
-				A1086C4B2D150F9900C90A95 /* OldViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -186,8 +189,8 @@
 		A1086C532D151E7700C90A95 /* MainMapView */ = {
 			isa = PBXGroup;
 			children = (
-				A1086C582D151FBB00C90A95 /* MainMapViewModel.swift */,
 				A1086C562D151E8D00C90A95 /* MainMapView.swift */,
+				A1086C582D151FBB00C90A95 /* MainMapViewModel.swift */,
 			);
 			path = MainMapView;
 			sourceTree = "<group>";
@@ -216,15 +219,34 @@
 			path = MainSheetView;
 			sourceTree = "<group>";
 		};
+		A1086C692D156A5500C90A95 /* PeekDetentView */ = {
+			isa = PBXGroup;
+			children = (
+				A1086C6A2D156A6800C90A95 /* PeekDetentView.swift */,
+				A1086C6C2D156A7000C90A95 /* PeekDetentViewModel.swift */,
+			);
+			path = PeekDetentView;
+			sourceTree = "<group>";
+		};
+		A1086C6E2D1576C100C90A95 /* Legacy */ = {
+			isa = PBXGroup;
+			children = (
+				155830C02A1EA4E80065D51B /* OldModels */,
+				A1086C4B2D150F9900C90A95 /* OldViews */,
+			);
+			path = Legacy;
+			sourceTree = "<group>";
+		};
 		A1F4C61D2D13F54D00FA09B2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				A1086C662D15615000C90A95 /* SheetSizes.swift */,
+				A1086C5F2D15471100C90A95 /* CoreData */,
+				A1086C5C2D15285900C90A95 /* Extensions */,
 				A1086C4A2D150F5A00C90A95 /* CustomView */,
+				A1086C662D15615000C90A95 /* SheetSizes.swift */,
 				A1F4C6222D13FC5800FA09B2 /* CustomColor.swift */,
 				A1F4C6202D13F56C00FA09B2 /* CustomFont.swift */,
 				A1F4C61E2D13F55D00FA09B2 /* Constants.swift */,
-				A1086C5C2D15285900C90A95 /* Extensions */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -330,6 +352,7 @@
 				A1086C592D151FBF00C90A95 /* MainMapViewModel.swift in Sources */,
 				A1086C632D15545600C90A95 /* MainSheetView.swift in Sources */,
 				A1086C5B2D15237500C90A95 /* CoreLocationService.swift in Sources */,
+				A1086C6B2D156A6B00C90A95 /* PeekDetentView.swift in Sources */,
 				1508DC662A1FC05200673445 /* MiddlePopupView.swift in Sources */,
 				155830A52A1E99930065D51B /* Nano2App.swift in Sources */,
 				A1F4C6232D13FC5B00FA09B2 /* CustomColor.swift in Sources */,
@@ -339,6 +362,7 @@
 				A1F4C6282D13FDF000FA09B2 /* FirstTimeOpenViewModel.swift in Sources */,
 				A1086C672D15615600C90A95 /* SheetSizes.swift in Sources */,
 				155830AC2A1E99930065D51B /* OldMainView.swift in Sources */,
+				A1086C6D2D156A7400C90A95 /* PeekDetentViewModel.swift in Sources */,
 				155830AA2A1E99930065D51B /* Nano2.xcdatamodeld in Sources */,
 				A1086C652D15545C00C90A95 /* MainSheetViewModel.swift in Sources */,
 				A1086C572D151E8D00C90A95 /* MainMapView.swift in Sources */,

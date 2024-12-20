@@ -34,9 +34,11 @@ struct MainMapView: View {
         .controlSize(.extraLarge)
         .mapStyle(.hybrid)
         .mapControls {
+            
             MapCompass()
             MapUserLocationButton()
             MapPitchToggle()
+
         }
         
     }
