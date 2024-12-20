@@ -10,9 +10,9 @@ import MapKit
 
 class Coordinator: NSObject, MKMapViewDelegate {
     
-    var control: MapView
+    var control: OldMapView
     
-    init(_ control: MapView) {
+    init(_ control: OldMapView) {
         self.control = control
     }
     
@@ -37,7 +37,7 @@ class Coordinator: NSObject, MKMapViewDelegate {
     
 }
 
-struct MapView: UIViewRepresentable {
+struct OldMapView: UIViewRepresentable {
     
     let landmark: [Landmark]
     
@@ -62,7 +62,7 @@ struct MapView: UIViewRepresentable {
         
     }
     
-    func updateUIView(_ uiView: MKMapView, context: UIViewRepresentableContext<MapView>) {
+    func updateUIView(_ uiView: MKMapView, context: UIViewRepresentableContext<OldMapView>) {
         
         if let userTrackingButton = uiView.subviews.first(where: { $0 is MKUserTrackingButton }) as? MKUserTrackingButton {
             userTrackingButton.frame = CGRect(origin: CGPoint(x: 345, y: 620), size: CGSize(width: 35, height: 35))

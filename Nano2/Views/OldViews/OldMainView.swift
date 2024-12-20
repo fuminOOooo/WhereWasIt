@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  OldMainView.swift
 //  Nano2
 //
 //  Created by Elvis Susanto on 25/05/23.
@@ -12,14 +12,14 @@ import CoreLocationUI
 import MapKit
 import PhotosUI
 
-struct MainView: View {
+struct OldMainView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
+//    @FetchRequest(
+//        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+//        animation: .default)
+//    private var items: FetchedResults<Item>
     
     @State var infoClicked: Bool = false
     
@@ -112,7 +112,7 @@ struct MainView: View {
                 // Map View && Button
                 ZStack {
                     
-                    MapView(landmark: landmarks, landmarkSearched: $landmarkSearched, landmarkClicked: $landmarkClicked, currentRegion: $currentRegion)
+                    OldMapView(landmark: landmarks, landmarkSearched: $landmarkSearched, landmarkClicked: $landmarkClicked, currentRegion: $currentRegion)
                         .ignoresSafeArea()
                     
                     VStack {
@@ -160,7 +160,7 @@ struct MainView: View {
                     if deleting == true {
                         Color.black.opacity(0.75)
                             .edgesIgnoringSafeArea(.all)
-                        ConfirmationModal(deleting: $deleting, acceptance: $acceptance)
+                        OldConfirmationModal(deleting: $deleting, acceptance: $acceptance)
                             .zIndex(1)
                             .onDisappear {
                                 if acceptance == true {
@@ -316,52 +316,57 @@ struct MainView: View {
             if infoClicked == true {
                 Color.black.opacity(0.9)
                     .edgesIgnoringSafeArea(.all)
-                InfoModal(infoClicked: $infoClicked)
+                OldInfoModal(infoClicked: $infoClicked)
                     .zIndex(1)
             }
             
             if firstTime == true {
                 Color.black.opacity(0.9)
                     .edgesIgnoringSafeArea(.all)
-                FirstTimeModal(firstTime: $firstTime)
-                    .zIndex(1)
+                MiddlePopupView(
+                    shown: $firstTime,
+                    buttonText: "Get Started"
+                ) {
+                    
+                }
+                .zIndex(1)
             }
             
         }
         
     }
     
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-            
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-    
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-            
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-    
+//    private func addItem() {
+//        withAnimation {
+//            let newItem = Item(context: viewContext)
+//            newItem.timestamp = Date()
+//            
+//            do {
+//                try viewContext.save()
+//            } catch {
+//                // Replace this implementation with code to handle the error appropriately.
+//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//                let nsError = error as NSError
+//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//            }
+//        }
+//    }
+//    
+//    private func deleteItems(offsets: IndexSet) {
+//        withAnimation {
+//            offsets.map { items[$0] }.forEach(viewContext.delete)
+//            
+//            do {
+//                try viewContext.save()
+//            } catch {
+//                // Replace this implementation with code to handle the error appropriately.
+//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//                let nsError = error as NSError
+//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//            }
+//        }
+//    }
+//    
 }
 
 private let itemFormatter: DateFormatter = {

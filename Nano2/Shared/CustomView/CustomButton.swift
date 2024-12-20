@@ -7,34 +7,50 @@
 
 import SwiftUI
 
+extension View {
+    
+    func withFillButtonStyle() -> some View {
+        buttonStyle(FillButton())
+    }
+    
+    func withBorderButtonStyle() -> some View {
+        buttonStyle(BorderButton())
+    }
+    
+}
+
 struct FillButton: ButtonStyle {
+    
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(Font.custom("SF-Pro-Rounded-Regular", size: 16))
+            .frame(maxWidth: .infinity)
+            .font(CustomFont.roundedRegular16)
             .padding()
-            .frame(height: 44)
             .background(configuration.isPressed ? Color.gray : Color.black)
             .overlay(
-                RoundedRectangle(cornerRadius: 6)
+                RoundedRectangle(cornerRadius: NumberConstant.defaultCornerRadiusSize)
                     .stroke(configuration.isPressed ? Color.gray : Color.black)
             )
-            .cornerRadius(6)
+            .cornerRadius(NumberConstant.defaultCornerRadiusSize)
             .foregroundColor(configuration.isPressed ? Color.white : Color.white)
     }
+    
 }
 
 struct BorderButton: ButtonStyle {
+    
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(Font.custom("Fredoka-Medium", size: 16))
+            .frame(maxWidth: .infinity)
+            .font(CustomFont.medium16)
             .padding()
-            .frame(height: 44)
             .background(configuration.isPressed ? Color.gray : Color.white)
             .overlay(
-                RoundedRectangle(cornerRadius: 6)
+                RoundedRectangle(cornerRadius: NumberConstant.defaultCornerRadiusSize)
                     .stroke(configuration.isPressed ? Color.gray : Color.gray)
             )
-            .cornerRadius(6)
+            .cornerRadius(NumberConstant.defaultCornerRadiusSize)
             .foregroundColor(configuration.isPressed ? Color.gray : Color.gray)
     }
+    
 }
