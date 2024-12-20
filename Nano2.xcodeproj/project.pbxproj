@@ -26,6 +26,9 @@
 		A1086C572D151E8D00C90A95 /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C562D151E8D00C90A95 /* MainMapView.swift */; };
 		A1086C592D151FBF00C90A95 /* MainMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C582D151FBB00C90A95 /* MainMapViewModel.swift */; };
 		A1086C5B2D15237500C90A95 /* CoreLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C5A2D15237000C90A95 /* CoreLocationService.swift */; };
+		A1086C632D15545600C90A95 /* MainSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C622D15545300C90A95 /* MainSheetView.swift */; };
+		A1086C652D15545C00C90A95 /* MainSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C642D15545900C90A95 /* MainSheetViewModel.swift */; };
+		A1086C672D15615600C90A95 /* SheetSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C662D15615000C90A95 /* SheetSizes.swift */; };
 		A1F4C61F2D13F56000FA09B2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C61E2D13F55D00FA09B2 /* Constants.swift */; };
 		A1F4C6212D13F57100FA09B2 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C6202D13F56C00FA09B2 /* CustomFont.swift */; };
 		A1F4C6232D13FC5B00FA09B2 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C6222D13FC5800FA09B2 /* CustomColor.swift */; };
@@ -57,6 +60,9 @@
 		A1086C562D151E8D00C90A95 /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
 		A1086C582D151FBB00C90A95 /* MainMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewModel.swift; sourceTree = "<group>"; };
 		A1086C5A2D15237000C90A95 /* CoreLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationService.swift; sourceTree = "<group>"; };
+		A1086C622D15545300C90A95 /* MainSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSheetView.swift; sourceTree = "<group>"; };
+		A1086C642D15545900C90A95 /* MainSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSheetViewModel.swift; sourceTree = "<group>"; };
+		A1086C662D15615000C90A95 /* SheetSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetSizes.swift; sourceTree = "<group>"; };
 		A1F4C61E2D13F55D00FA09B2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A1F4C6202D13F56C00FA09B2 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		A1F4C6222D13FC5800FA09B2 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
@@ -131,6 +137,7 @@
 		155830C12A1EA4F60065D51B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A1086C612D15544800C90A95 /* MainSheetView */,
 				A1086C502D1510CD00C90A95 /* FirstTimeOpenView */,
 				A1086C532D151E7700C90A95 /* MainMapView */,
 				A1F4C6262D13FDE400FA09B2 /* MainView */,
@@ -200,9 +207,19 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		A1086C612D15544800C90A95 /* MainSheetView */ = {
+			isa = PBXGroup;
+			children = (
+				A1086C622D15545300C90A95 /* MainSheetView.swift */,
+				A1086C642D15545900C90A95 /* MainSheetViewModel.swift */,
+			);
+			path = MainSheetView;
+			sourceTree = "<group>";
+		};
 		A1F4C61D2D13F54D00FA09B2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A1086C662D15615000C90A95 /* SheetSizes.swift */,
 				A1086C4A2D150F5A00C90A95 /* CustomView */,
 				A1F4C6222D13FC5800FA09B2 /* CustomColor.swift */,
 				A1F4C6202D13F56C00FA09B2 /* CustomFont.swift */,
@@ -215,8 +232,8 @@
 		A1F4C6262D13FDE400FA09B2 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				A1086C512D15129C00C90A95 /* MainViewModel.swift */,
 				A1F4C6242D13FDCF00FA09B2 /* MainView.swift */,
+				A1086C512D15129C00C90A95 /* MainViewModel.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -311,6 +328,7 @@
 				155830BA2A1E9A0D0065D51B /* LocationManager.swift in Sources */,
 				155830BD2A1E9D320065D51B /* OldMapView.swift in Sources */,
 				A1086C592D151FBF00C90A95 /* MainMapViewModel.swift in Sources */,
+				A1086C632D15545600C90A95 /* MainSheetView.swift in Sources */,
 				A1086C5B2D15237500C90A95 /* CoreLocationService.swift in Sources */,
 				1508DC662A1FC05200673445 /* MiddlePopupView.swift in Sources */,
 				155830A52A1E99930065D51B /* Nano2App.swift in Sources */,
@@ -319,8 +337,10 @@
 				A1086C522D15129F00C90A95 /* MainViewModel.swift in Sources */,
 				1508DC682A1FCB8300673445 /* OldInfoModal.swift in Sources */,
 				A1F4C6282D13FDF000FA09B2 /* FirstTimeOpenViewModel.swift in Sources */,
+				A1086C672D15615600C90A95 /* SheetSizes.swift in Sources */,
 				155830AC2A1E99930065D51B /* OldMainView.swift in Sources */,
 				155830AA2A1E99930065D51B /* Nano2.xcdatamodeld in Sources */,
+				A1086C652D15545C00C90A95 /* MainSheetViewModel.swift in Sources */,
 				A1086C572D151E8D00C90A95 /* MainMapView.swift in Sources */,
 				A1F4C61F2D13F56000FA09B2 /* Constants.swift in Sources */,
 			);

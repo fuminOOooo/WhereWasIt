@@ -30,13 +30,14 @@ struct MainMapView: View {
             )
             
         }
-        .mapControls {
-            MapCompass()
-            MapUserLocationButton()
-        }
         .mapControlVisibility(.visible)
         .controlSize(.extraLarge)
         .mapStyle(.hybrid)
+        .mapControls {
+            MapCompass()
+            MapUserLocationButton()
+            MapPitchToggle()
+        }
         
     }
     

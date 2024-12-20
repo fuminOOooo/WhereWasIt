@@ -21,6 +21,8 @@ public final class StringConstant {
 
 public final class NumberConstant {
     
+    public static let defaultAnimationSleepMillisecondValue = 50
+    
     public static let defaultCornerRadiusSize = 8.0
     
     public static let defaultDimmedBackgroundOpacity = 0.5

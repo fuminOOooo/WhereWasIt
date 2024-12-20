@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MainView: View {
     
+    @State private var showingSheet : Bool = true
+    
     var body: some View {
         
         ZStack {
@@ -16,6 +18,11 @@ struct MainView: View {
             MainMapView()
             
             FirstTimeOpenView()
+            
+        }
+        .sheet(isPresented: $showingSheet) {
+            
+            MainSheetView()
             
         }
         
