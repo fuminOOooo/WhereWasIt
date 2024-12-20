@@ -13,9 +13,11 @@ struct Nano2App: App {
 //    let persistenceController = PersistenceController.shared
 
     var body: some Scene {
+        
         WindowGroup {
-            NewMainView()
+            MainView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
+        
     }
 }

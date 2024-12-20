@@ -6,7 +6,7 @@
 
 import SwiftUI
 
-struct ConfirmationModal: View {
+struct OldConfirmationModal: View {
     
     @Binding var deleting: Bool
     

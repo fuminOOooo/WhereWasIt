@@ -8,52 +8,60 @@
 
 /* Begin PBXBuildFile section */
 		1508DC662A1FC05200673445 /* MiddlePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1508DC652A1FC05200673445 /* MiddlePopupView.swift */; };
-		1508DC682A1FCB8300673445 /* InfoModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1508DC672A1FCB8300673445 /* InfoModal.swift */; };
+		1508DC682A1FCB8300673445 /* OldInfoModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1508DC672A1FCB8300673445 /* OldInfoModal.swift */; };
 		155830A52A1E99930065D51B /* Nano2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830A42A1E99930065D51B /* Nano2App.swift */; };
-		155830A72A1E99930065D51B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830A62A1E99930065D51B /* Persistence.swift */; };
 		155830AA2A1E99930065D51B /* Nano2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 155830A82A1E99930065D51B /* Nano2.xcdatamodeld */; };
-		155830AC2A1E99930065D51B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830AB2A1E99930065D51B /* MainView.swift */; };
+		155830AC2A1E99930065D51B /* OldMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830AB2A1E99930065D51B /* OldMainView.swift */; };
 		155830AE2A1E99950065D51B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 155830AD2A1E99950065D51B /* Assets.xcassets */; };
 		155830B22A1E99950065D51B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 155830B12A1E99950065D51B /* Preview Assets.xcassets */; };
 		155830BA2A1E9A0D0065D51B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830B92A1E9A0D0065D51B /* LocationManager.swift */; };
-		155830BD2A1E9D320065D51B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830BC2A1E9D320065D51B /* MapView.swift */; };
+		155830BD2A1E9D320065D51B /* OldMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830BC2A1E9D320065D51B /* OldMapView.swift */; };
 		155830BF2A1EA4200065D51B /* LandmarkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830BE2A1EA4200065D51B /* LandmarkConstants.swift */; };
-		155830C32A1F03460065D51B /* ConfirmationModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830C22A1F03460065D51B /* ConfirmationModal.swift */; };
+		155830C32A1F03460065D51B /* OldConfirmationModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830C22A1F03460065D51B /* OldConfirmationModal.swift */; };
 		155830C52A1F044B0065D51B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830C42A1F044B0065D51B /* CustomButton.swift */; };
 		15AF23742B149CFE0075F7D8 /* SF-Pro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15AF23722B149CFE0075F7D8 /* SF-Pro-Italic.ttf */; };
 		15AF23752B149CFE0075F7D8 /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15AF23732B149CFE0075F7D8 /* SF-Pro.ttf */; };
+		A1086C4D2D15102800C90A95 /* FirstTimeOpenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C4C2D15102800C90A95 /* FirstTimeOpenView.swift */; };
+		A1086C522D15129F00C90A95 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C512D15129C00C90A95 /* MainViewModel.swift */; };
+		A1086C572D151E8D00C90A95 /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C562D151E8D00C90A95 /* MainMapView.swift */; };
+		A1086C592D151FBF00C90A95 /* MainMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C582D151FBB00C90A95 /* MainMapViewModel.swift */; };
+		A1086C5B2D15237500C90A95 /* CoreLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C5A2D15237000C90A95 /* CoreLocationService.swift */; };
 		A1F4C61F2D13F56000FA09B2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C61E2D13F55D00FA09B2 /* Constants.swift */; };
 		A1F4C6212D13F57100FA09B2 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C6202D13F56C00FA09B2 /* CustomFont.swift */; };
 		A1F4C6232D13FC5B00FA09B2 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C6222D13FC5800FA09B2 /* CustomColor.swift */; };
-		A1F4C6252D13FDD400FA09B2 /* NewMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C6242D13FDCF00FA09B2 /* NewMainView.swift */; };
-		A1F4C6282D13FDF000FA09B2 /* NewMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C6272D13FDED00FA09B2 /* NewMainViewModel.swift */; };
+		A1F4C6252D13FDD400FA09B2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C6242D13FDCF00FA09B2 /* MainView.swift */; };
+		A1F4C6282D13FDF000FA09B2 /* FirstTimeOpenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C6272D13FDED00FA09B2 /* FirstTimeOpenViewModel.swift */; };
 		A1F4C62D2D140F2E00FA09B2 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C62C2D140F2600FA09B2 /* UserDefaultsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1508DC652A1FC05200673445 /* MiddlePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddlePopupView.swift; sourceTree = "<group>"; };
-		1508DC672A1FCB8300673445 /* InfoModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModal.swift; sourceTree = "<group>"; };
+		1508DC672A1FCB8300673445 /* OldInfoModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldInfoModal.swift; sourceTree = "<group>"; };
 		155830A12A1E99930065D51B /* Nano2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nano2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		155830A42A1E99930065D51B /* Nano2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano2App.swift; sourceTree = "<group>"; };
-		155830A62A1E99930065D51B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		155830A92A1E99930065D51B /* Nano2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Nano2.xcdatamodel; sourceTree = "<group>"; };
-		155830AB2A1E99930065D51B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		155830AB2A1E99930065D51B /* OldMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldMainView.swift; sourceTree = "<group>"; };
 		155830AD2A1E99950065D51B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		155830AF2A1E99950065D51B /* Nano2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nano2.entitlements; sourceTree = "<group>"; };
 		155830B12A1E99950065D51B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		155830B92A1E9A0D0065D51B /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		155830BB2A1E9C1D0065D51B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		155830BC2A1E9D320065D51B /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		155830BC2A1E9D320065D51B /* OldMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldMapView.swift; sourceTree = "<group>"; };
 		155830BE2A1EA4200065D51B /* LandmarkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkConstants.swift; sourceTree = "<group>"; };
-		155830C22A1F03460065D51B /* ConfirmationModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationModal.swift; sourceTree = "<group>"; };
+		155830C22A1F03460065D51B /* OldConfirmationModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldConfirmationModal.swift; sourceTree = "<group>"; };
 		155830C42A1F044B0065D51B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		15AF23722B149CFE0075F7D8 /* SF-Pro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Italic.ttf"; sourceTree = "<group>"; };
 		15AF23732B149CFE0075F7D8 /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
+		A1086C4C2D15102800C90A95 /* FirstTimeOpenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeOpenView.swift; sourceTree = "<group>"; };
+		A1086C512D15129C00C90A95 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		A1086C562D151E8D00C90A95 /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
+		A1086C582D151FBB00C90A95 /* MainMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewModel.swift; sourceTree = "<group>"; };
+		A1086C5A2D15237000C90A95 /* CoreLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationService.swift; sourceTree = "<group>"; };
 		A1F4C61E2D13F55D00FA09B2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A1F4C6202D13F56C00FA09B2 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		A1F4C6222D13FC5800FA09B2 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
-		A1F4C6242D13FDCF00FA09B2 /* NewMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMainView.swift; sourceTree = "<group>"; };
-		A1F4C6272D13FDED00FA09B2 /* NewMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMainViewModel.swift; sourceTree = "<group>"; };
+		A1F4C6242D13FDCF00FA09B2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		A1F4C6272D13FDED00FA09B2 /* FirstTimeOpenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeOpenViewModel.swift; sourceTree = "<group>"; };
 		A1F4C62C2D140F2600FA09B2 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,17 +95,16 @@
 		155830A32A1E99930065D51B /* Nano2 */ = {
 			isa = PBXGroup;
 			children = (
+				A1086C5F2D15471100C90A95 /* CoreData */,
 				A1F4C62B2D140F1B00FA09B2 /* Services */,
 				A1F4C61D2D13F54D00FA09B2 /* Shared */,
 				155830C12A1EA4F60065D51B /* Views */,
 				155830C02A1EA4E80065D51B /* Models */,
 				155830BB2A1E9C1D0065D51B /* Info.plist */,
 				155830A42A1E99930065D51B /* Nano2App.swift */,
-				155830A62A1E99930065D51B /* Persistence.swift */,
 				155830B92A1E9A0D0065D51B /* LocationManager.swift */,
 				155830AD2A1E99950065D51B /* Assets.xcassets */,
 				155830AF2A1E99950065D51B /* Nano2.entitlements */,
-				155830A82A1E99930065D51B /* Nano2.xcdatamodeld */,
 				155830B02A1E99950065D51B /* Preview Content */,
 			);
 			path = Nano2;
@@ -124,22 +131,83 @@
 		155830C12A1EA4F60065D51B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A1086C502D1510CD00C90A95 /* FirstTimeOpenView */,
+				A1086C532D151E7700C90A95 /* MainMapView */,
 				A1F4C6262D13FDE400FA09B2 /* MainView */,
-				155830BC2A1E9D320065D51B /* MapView.swift */,
-				155830C22A1F03460065D51B /* ConfirmationModal.swift */,
-				155830C42A1F044B0065D51B /* CustomButton.swift */,
-				1508DC652A1FC05200673445 /* MiddlePopupView.swift */,
-				1508DC672A1FCB8300673445 /* InfoModal.swift */,
+				A1086C492D150F4800C90A95 /* Components */,
+				A1086C4B2D150F9900C90A95 /* OldViews */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A1086C492D150F4800C90A95 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A1086C4A2D150F5A00C90A95 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				155830C42A1F044B0065D51B /* CustomButton.swift */,
+				1508DC652A1FC05200673445 /* MiddlePopupView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		A1086C4B2D150F9900C90A95 /* OldViews */ = {
+			isa = PBXGroup;
+			children = (
+				155830C22A1F03460065D51B /* OldConfirmationModal.swift */,
+				155830BC2A1E9D320065D51B /* OldMapView.swift */,
+				155830AB2A1E99930065D51B /* OldMainView.swift */,
+				1508DC672A1FCB8300673445 /* OldInfoModal.swift */,
+			);
+			path = OldViews;
+			sourceTree = "<group>";
+		};
+		A1086C502D1510CD00C90A95 /* FirstTimeOpenView */ = {
+			isa = PBXGroup;
+			children = (
+				A1086C4C2D15102800C90A95 /* FirstTimeOpenView.swift */,
+				A1F4C6272D13FDED00FA09B2 /* FirstTimeOpenViewModel.swift */,
+			);
+			path = FirstTimeOpenView;
+			sourceTree = "<group>";
+		};
+		A1086C532D151E7700C90A95 /* MainMapView */ = {
+			isa = PBXGroup;
+			children = (
+				A1086C582D151FBB00C90A95 /* MainMapViewModel.swift */,
+				A1086C562D151E8D00C90A95 /* MainMapView.swift */,
+			);
+			path = MainMapView;
+			sourceTree = "<group>";
+		};
+		A1086C5C2D15285900C90A95 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A1086C5F2D15471100C90A95 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				155830A82A1E99930065D51B /* Nano2.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		A1F4C61D2D13F54D00FA09B2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A1086C4A2D150F5A00C90A95 /* CustomView */,
 				A1F4C6222D13FC5800FA09B2 /* CustomColor.swift */,
 				A1F4C6202D13F56C00FA09B2 /* CustomFont.swift */,
 				A1F4C61E2D13F55D00FA09B2 /* Constants.swift */,
+				A1086C5C2D15285900C90A95 /* Extensions */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -147,9 +215,8 @@
 		A1F4C6262D13FDE400FA09B2 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				A1F4C6272D13FDED00FA09B2 /* NewMainViewModel.swift */,
-				A1F4C6242D13FDCF00FA09B2 /* NewMainView.swift */,
-				155830AB2A1E99930065D51B /* MainView.swift */,
+				A1086C512D15129C00C90A95 /* MainViewModel.swift */,
+				A1F4C6242D13FDCF00FA09B2 /* MainView.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -157,6 +224,7 @@
 		A1F4C62B2D140F1B00FA09B2 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A1086C5A2D15237000C90A95 /* CoreLocationService.swift */,
 				A1F4C62C2D140F2600FA09B2 /* UserDefaultsService.swift */,
 			);
 			path = Services;
@@ -234,22 +302,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				155830C32A1F03460065D51B /* ConfirmationModal.swift in Sources */,
-				A1F4C6252D13FDD400FA09B2 /* NewMainView.swift in Sources */,
+				155830C32A1F03460065D51B /* OldConfirmationModal.swift in Sources */,
+				A1F4C6252D13FDD400FA09B2 /* MainView.swift in Sources */,
+				A1086C4D2D15102800C90A95 /* FirstTimeOpenView.swift in Sources */,
 				155830BF2A1EA4200065D51B /* LandmarkConstants.swift in Sources */,
 				155830C52A1F044B0065D51B /* CustomButton.swift in Sources */,
 				A1F4C6212D13F57100FA09B2 /* CustomFont.swift in Sources */,
 				155830BA2A1E9A0D0065D51B /* LocationManager.swift in Sources */,
-				155830BD2A1E9D320065D51B /* MapView.swift in Sources */,
+				155830BD2A1E9D320065D51B /* OldMapView.swift in Sources */,
+				A1086C592D151FBF00C90A95 /* MainMapViewModel.swift in Sources */,
+				A1086C5B2D15237500C90A95 /* CoreLocationService.swift in Sources */,
 				1508DC662A1FC05200673445 /* MiddlePopupView.swift in Sources */,
 				155830A52A1E99930065D51B /* Nano2App.swift in Sources */,
 				A1F4C6232D13FC5B00FA09B2 /* CustomColor.swift in Sources */,
 				A1F4C62D2D140F2E00FA09B2 /* UserDefaultsService.swift in Sources */,
-				155830A72A1E99930065D51B /* Persistence.swift in Sources */,
-				1508DC682A1FCB8300673445 /* InfoModal.swift in Sources */,
-				A1F4C6282D13FDF000FA09B2 /* NewMainViewModel.swift in Sources */,
-				155830AC2A1E99930065D51B /* MainView.swift in Sources */,
+				A1086C522D15129F00C90A95 /* MainViewModel.swift in Sources */,
+				1508DC682A1FCB8300673445 /* OldInfoModal.swift in Sources */,
+				A1F4C6282D13FDF000FA09B2 /* FirstTimeOpenViewModel.swift in Sources */,
+				155830AC2A1E99930065D51B /* OldMainView.swift in Sources */,
 				155830AA2A1E99930065D51B /* Nano2.xcdatamodeld in Sources */,
+				A1086C572D151E8D00C90A95 /* MainMapView.swift in Sources */,
 				A1F4C61F2D13F56000FA09B2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

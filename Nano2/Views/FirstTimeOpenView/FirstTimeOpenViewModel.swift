@@ -1,5 +1,5 @@
 //
-//  NewMainViewModel.swift
+//  MainViewModel.swift
 //  Nano2
 //
 //  Created by Elvis Susanto on 12/19/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class NewMainViewModel: ObservableObject {
+public final class FirstTimeOpenViewModel: ObservableObject {
     
     init(
         _ userDefaultsService: UserDefaultsServiceable = UserDefaultsService.instance
@@ -15,7 +15,7 @@ public final class NewMainViewModel: ObservableObject {
         self.userDefaultsService = userDefaultsService
     }
     
-    let userDefaultsService : UserDefaultsServiceable
+    var userDefaultsService : (any UserDefaultsServiceable)
     
     public func firstTimeCheck() -> Bool {
         

@@ -6,7 +6,7 @@
 
 import SwiftUI
 
-struct InfoModal: View {
+struct OldInfoModal: View {
     
     @Binding var infoClicked: Bool
     
