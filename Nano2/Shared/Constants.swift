@@ -41,6 +41,8 @@ public final class StringConstant {
     
     static let dash = "-"
     
+    static let persistentStoreLoadingFailure = "Failed to load persistent stores"
+    
 }
 
 public final class UserDefaultsKeyConstant {

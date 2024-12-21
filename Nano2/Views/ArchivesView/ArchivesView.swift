@@ -21,7 +21,7 @@ struct ArchivesView: View {
     
     var body: some View {
         
-        NavigationView {
+        NavigationStack {
             
             List {
                 
@@ -29,10 +29,12 @@ struct ArchivesView: View {
                     
                     ForEach(locationitems) { locationitem in
                         
-                        let description = vm.getLocationItemDescription(locationitem)
+                        let name = locationitem.name ?? String()
                         
-                        NavigationLink(description) {
-                            Text(description)
+                        NavigationLink(name) {
+                            
+                            
+                            
                         }
                         
                     }
@@ -52,5 +54,6 @@ struct ArchivesView: View {
                 onDismiss()
             }
         )
+        .navigationBarBackButtonHidden()
     }
 }

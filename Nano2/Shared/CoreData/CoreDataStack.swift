@@ -17,7 +17,7 @@ class CoreDataStack: ObservableObject {
         
         container.loadPersistentStores { _, error in
             if let error {
-                fatalError("Failed to load persistent stores: \(error.localizedDescription)")
+                fatalError(StringConstant.persistentStoreLoadingFailure + StringConstant.dash + error.localizedDescription)
             }
         }
         return container
@@ -35,7 +35,7 @@ extension CoreDataStack {
         do {
             try persistentContainer.viewContext.save()
         } catch {
-            print("Failed to save the context:", error.localizedDescription)
+            print(StringConstant.failedSave, error.localizedDescription)
         }
         
     }

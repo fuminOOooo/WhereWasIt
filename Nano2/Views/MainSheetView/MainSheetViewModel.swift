@@ -33,6 +33,7 @@ public final class MainSheetViewModel: ObservableObject {
         
         do {
             try context.save()
+            savedLocationName = String()
         } catch {
             print(StringConstant.failedSave)
         }
