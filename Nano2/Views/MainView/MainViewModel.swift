@@ -15,7 +15,7 @@ public final class MainViewModel: ObservableObject {
         
         self.sheetVisibility = true
         self.userDefaultsService = userDefaultsService
-        guard let _ : Bool = userDefaultsService.get(CoreDataKeyConstant.notOpenedBefore) else
+        guard let _ : Bool = userDefaultsService.get(UserDefaultsKeyConstant.notOpenedBefore) else
         {
             self.sheetVisibility = false
             return

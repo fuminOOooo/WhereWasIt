@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct ArchivesView: View {
+    
     public init(onDismiss: (@escaping () -> Void)) {
         self.onDismiss = onDismiss
     }
+    
     private let onDismiss : (() -> Void)
+    
     var body: some View {
         VStack {
-            Text(StringConstant.listButtonText)
+            
         }
         .useCustomToolbar(
+            StringConstant.listButtonText,
             onDismiss: {
                 onDismiss()
             }

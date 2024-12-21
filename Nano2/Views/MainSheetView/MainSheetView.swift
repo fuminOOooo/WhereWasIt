@@ -46,47 +46,26 @@ struct MainSheetView: View {
                             onDismiss: shrinkDetent
                         )
                     case .none:
-                        Text("")
+                        VStack{}
                     }
                     
                     
                 } else {
                     
-                    VStack {
-                        
-                        Text(String(vm.savedLocationsCount) + StringConstant.space + StringConstant.locationsSaved)
-                            .font(.title2)
-                            .bold()
-                        
-                        HStack {
-                            
-                            SystemImageButton(
-                                StringConstant.settingsButtonText,
-                                imageName: ImageNameConstant.settingsButtonImage
-                            ) {
-                                expandDetent()
-                                currentDetails = .settings
-                            }
-                            
-                            SystemImageButton(
-                                StringConstant.pinButtonText,
-                                imageName: ImageNameConstant.pinButtonImage
-                            ) {
-                                saveLocation.toggle()
-                            }
-                            
-                            SystemImageButton(
-                                StringConstant.listButtonText,
-                                imageName: ImageNameConstant.listButtonImage
-                            ) {
-                                expandDetent()
-                                currentDetails = .archives
-                            }
-                            
+                    ThreeButtonView(
+                        locationsCount: vm.savedLocationsCount,
+                        settingsButtonAction: {
+                            expandDetent()
+                            currentDetails = .settings
+                        },
+                        saveButtonAction: {
+                            saveLocation.toggle()
+                        },
+                        archivesButtonAction: {
+                            expandDetent()
+                            currentDetails = .archives
                         }
-                        .padding([.horizontal, .bottom])
-                        
-                    }
+                    )
                     
                 }
                 

@@ -27,6 +27,8 @@
 		15DC7D962D172D550018D218 /* PresentationDetent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DC7D952D172D550018D218 /* PresentationDetent.swift */; };
 		15DC7D992D172D730018D218 /* ArchivesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DC7D972D172D730018D218 /* ArchivesView.swift */; };
 		15DC7D9C2D172D7C0018D218 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DC7D9A2D172D7C0018D218 /* SettingsView.swift */; };
+		15DC7DA02D1738440018D218 /* ThreeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DC7D9F2D1738440018D218 /* ThreeButtonView.swift */; };
+		15DC7DA22D174B830018D218 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DC7DA12D174B800018D218 /* SettingsViewModel.swift */; };
 		A1086C4D2D15102800C90A95 /* FirstTimeOpenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C4C2D15102800C90A95 /* FirstTimeOpenView.swift */; };
 		A1086C522D15129F00C90A95 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C512D15129C00C90A95 /* MainViewModel.swift */; };
 		A1086C572D151E8D00C90A95 /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C562D151E8D00C90A95 /* MainMapView.swift */; };
@@ -67,6 +69,8 @@
 		15DC7D952D172D550018D218 /* PresentationDetent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationDetent.swift; sourceTree = "<group>"; };
 		15DC7D972D172D730018D218 /* ArchivesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivesView.swift; sourceTree = "<group>"; };
 		15DC7D9A2D172D7C0018D218 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		15DC7D9F2D1738440018D218 /* ThreeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeButtonView.swift; sourceTree = "<group>"; };
+		15DC7DA12D174B800018D218 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		A1086C4C2D15102800C90A95 /* FirstTimeOpenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeOpenView.swift; sourceTree = "<group>"; };
 		A1086C512D15129C00C90A95 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		A1086C562D151E8D00C90A95 /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 		15DC7D9B2D172D7C0018D218 /* SettingsView */ = {
 			isa = PBXGroup;
 			children = (
+				15DC7DA12D174B800018D218 /* SettingsViewModel.swift */,
 				15DC7D9A2D172D7C0018D218 /* SettingsView.swift */,
 			);
 			path = SettingsView;
@@ -185,6 +190,7 @@
 			children = (
 				1508DC652A1FC05200673445 /* MiddlePopupView.swift */,
 				15DC7D7A2D16FA330018D218 /* InputAlertView.swift */,
+				15DC7D9F2D1738440018D218 /* ThreeButtonView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -376,6 +382,7 @@
 				A1086C5B2D15237500C90A95 /* CoreLocationService.swift in Sources */,
 				15DC7D7D2D16FFCA0018D218 /* View.swift in Sources */,
 				1508DC662A1FC05200673445 /* MiddlePopupView.swift in Sources */,
+				15DC7DA22D174B830018D218 /* SettingsViewModel.swift in Sources */,
 				15DC7D9C2D172D7C0018D218 /* SettingsView.swift in Sources */,
 				155830A52A1E99930065D51B /* Nano2App.swift in Sources */,
 				A1F4C6232D13FC5B00FA09B2 /* CustomColor.swift in Sources */,
@@ -384,6 +391,7 @@
 				1508DC682A1FCB8300673445 /* LegacyInfoModal.swift in Sources */,
 				A1F4C6282D13FDF000FA09B2 /* FirstTimeOpenViewModel.swift in Sources */,
 				15DC7D992D172D730018D218 /* ArchivesView.swift in Sources */,
+				15DC7DA02D1738440018D218 /* ThreeButtonView.swift in Sources */,
 				A1086C672D15615600C90A95 /* SheetSizes.swift in Sources */,
 				155830AC2A1E99930065D51B /* LegacyMainView.swift in Sources */,
 				155830AA2A1E99930065D51B /* Nano2.xcdatamodeld in Sources */,

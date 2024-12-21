@@ -10,6 +10,8 @@ import MapKit
 
 struct MainMapView: View {
     
+    @Environment(\.managedObjectContext) private var viewContext
+    
     public init (
         vm: MainMapViewModel = MainMapViewModel()
     ) {
@@ -18,6 +20,7 @@ struct MainMapView: View {
             let cameraPosition  = MapCameraPosition.item(MKMapItem.forCurrentLocation())
             return MapCameraPosition.userLocation(followsHeading: true, fallback: cameraPosition)
         }()
+        self.vm.getAllMapPins(context: viewContext)
     }
     
     @ObservedObject var vm : MainMapViewModel

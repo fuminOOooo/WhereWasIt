@@ -18,7 +18,7 @@ extension View {
     }
     
     @ViewBuilder
-    func useCustomToolbar(onDismiss: @escaping (() -> Void)) -> some View {
+    func useCustomToolbar(_ title: String = String(), onDismiss: @escaping (() -> Void)) -> some View {
         self
             .navigationBarBackButtonHidden()
             .toolbar {
@@ -30,6 +30,9 @@ extension View {
                             .aspectRatio(contentMode: .fit)
                             .foregroundColor(.primary)
                     }
+                    Text(title)
+                        .font(.largeTitle)
+                        .bold()
                 }
             }
     }

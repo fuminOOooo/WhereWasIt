@@ -13,7 +13,7 @@ public final class FirstTimeOpenViewModel: ObservableObject {
         _ userDefaultsService: UserDefaultsServiceable = UserDefaultsService.instance
     ) {
         self.userDefaultsService = userDefaultsService
-        guard let notOpenedBefore : Bool = userDefaultsService.get(CoreDataKeyConstant.notOpenedBefore) else {
+        guard let notOpenedBefore : Bool = userDefaultsService.get(UserDefaultsKeyConstant.notOpenedBefore) else {
             notOpenedBefore = true
             return
         }
@@ -26,7 +26,7 @@ public final class FirstTimeOpenViewModel: ObservableObject {
     
     public func setFirstTime() {
         
-        userDefaultsService.set(key: CoreDataKeyConstant.notOpenedBefore, false)
+        userDefaultsService.set(key: UserDefaultsKeyConstant.notOpenedBefore, false)
         
     }
     

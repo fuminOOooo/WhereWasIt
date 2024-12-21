@@ -18,10 +18,10 @@ struct SettingsView: View {
     var body: some View {
         
         VStack {
-            Text(StringConstant.settingsButtonText)
+            
         }
-        .navigationBarTitleDisplayMode(.inline)
         .useCustomToolbar(
+            StringConstant.settingsButtonText,
             onDismiss: {
                 onDismiss()
             }

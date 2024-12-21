@@ -33,13 +33,25 @@ public final class StringConstant {
     
     static let listButtonText = "Archives"
     
+    static let appearance = "Appearance"
+    
+    static let system = "System"
+    
     static let space = " "
+    
+}
+
+public final class UserDefaultsKeyConstant {
+    
+    static let appearance = "appearance"
+    
+    static let notOpenedBefore = "not_opened_before"
     
 }
 
 public final class CoreDataKeyConstant {
     
-    static let notOpenedBefore = "NotOpenedBefore"
+    static let locationItem = "LocationItem"
     
 }
 
