@@ -76,25 +76,3 @@ struct MiddlePopupView<Content: View>: View {
     }
     
 }
-
-#Preview {
-    
-    @Previewable @State var shown: Bool = true
-    
-    ZStack {
-        
-        Button {
-            shown.toggle()
-        } label: {
-            Text("Hello")
-        }
-        
-        MiddlePopupView(
-            shown: $shown,
-            buttonText: "Preview Button"
-        ) { } content: { Text("Preview Text").foregroundStyle(.white) }
-        
-        
-    }
-    
-}

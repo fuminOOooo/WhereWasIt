@@ -13,7 +13,7 @@ class CoreDataStack: ObservableObject {
     
     lazy var persistentContainer: NSPersistentContainer = {
         
-        let container = NSPersistentContainer(name: "Nano2")
+        let container = NSPersistentContainer(name: CoreDataKeyConstant.dataModelName)
         
         container.loadPersistentStores { _, error in
             if let error {

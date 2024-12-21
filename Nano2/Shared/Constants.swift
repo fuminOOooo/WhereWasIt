@@ -43,6 +43,12 @@ public final class StringConstant {
     
     static let persistentStoreLoadingFailure = "Failed to load persistent stores"
     
+    static let userDefaultsLoadingFailure = "Failed to load from user defaults"
+    
+    static let noPicturesTaken = "No pictures taken here."
+    
+    static let takePictures = "Take Pictures"
+    
 }
 
 public final class UserDefaultsKeyConstant {
@@ -54,6 +60,8 @@ public final class UserDefaultsKeyConstant {
 }
 
 public final class CoreDataKeyConstant {
+    
+    static let dataModelName = "Nano2"
     
     static let locationItem = "LocationItem"
     
@@ -69,6 +77,14 @@ public final class ImageNameConstant {
     
     static let xmarkImage = "xmark"
     
+    static let squareFillImage = "square.fill"
+    
+    static let photoBadgePlusImage = "photo.badge.plus.fill"
+    
+    static let cameraImage = "camera"
+    
+    static let plusCircleImage = "plus.circle.fill"
+    
 }
 
 public final class NumberConstant {
@@ -78,6 +94,8 @@ public final class NumberConstant {
     static let defaultCameraDistance = 100.0
     
     static let defaultCornerRadiusSize = 8.0
+    
+    static let tighterCornerRadiusSize = 20.0
     
     static let defaultDimmedBackgroundOpacity = 0.5
     

@@ -22,7 +22,7 @@ public final class UserDefaultsService: UserDefaultsServiceable {
         
         guard let result = userDefaults.value(forKey: key) as? T else {
             
-            print("Failed getting value for \(key)")
+            print(StringConstant.userDefaultsLoadingFailure + StringConstant.dash + key)
             return nil
             
         }

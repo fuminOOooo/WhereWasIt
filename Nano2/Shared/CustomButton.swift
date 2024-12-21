@@ -31,7 +31,7 @@ extension View {
                             .foregroundColor(.primary)
                     }
                     Text(title)
-                        .font(.largeTitle)
+                        .font(.title)
                         .bold()
                 }
             }

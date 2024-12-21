@@ -29,11 +29,9 @@ struct ArchivesView: View {
                     
                     ForEach(locationitems) { locationitem in
                         
-                        let name = locationitem.name ?? String()
-                        
-                        NavigationLink(name) {
+                        NavigationLink(vm.getItemName(locationitem)) {
                             
-                            
+                            LocationDetailsView(locationItem: locationitem)
                             
                         }
                         

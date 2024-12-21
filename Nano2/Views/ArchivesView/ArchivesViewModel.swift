@@ -11,4 +11,8 @@ public final class ArchivesViewModel : ObservableObject {
     
     public init() {}
     
+    public func getItemName(_ locationItem: LocationItem) -> String {
+        return locationItem.name ?? String()
+    }
+    
 }
