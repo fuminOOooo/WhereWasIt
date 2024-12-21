@@ -147,7 +147,6 @@
 				A1086C502D1510CD00C90A95 /* FirstTimeOpenView */,
 				A1086C532D151E7700C90A95 /* MainMapView */,
 				A1F4C6262D13FDE400FA09B2 /* MainView */,
-				A1086C492D150F4800C90A95 /* Components */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -157,13 +156,6 @@
 			children = (
 			);
 			path = LocationItem;
-			sourceTree = "<group>";
-		};
-		A1086C492D150F4800C90A95 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		A1086C4A2D150F5A00C90A95 /* CustomView */ = {
