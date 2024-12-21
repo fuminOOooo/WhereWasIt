@@ -37,7 +37,6 @@
 		A1086C5B2D15237500C90A95 /* CoreLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C5A2D15237000C90A95 /* CoreLocationService.swift */; };
 		A1086C632D15545600C90A95 /* MainSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C622D15545300C90A95 /* MainSheetView.swift */; };
 		A1086C652D15545C00C90A95 /* MainSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C642D15545900C90A95 /* MainSheetViewModel.swift */; };
-		A1086C672D15615600C90A95 /* SheetSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C662D15615000C90A95 /* SheetSizes.swift */; };
 		A1F4C61F2D13F56000FA09B2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C61E2D13F55D00FA09B2 /* Constants.swift */; };
 		A1F4C6212D13F57100FA09B2 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C6202D13F56C00FA09B2 /* CustomFont.swift */; };
 		A1F4C6232D13FC5B00FA09B2 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C6222D13FC5800FA09B2 /* CustomColor.swift */; };
@@ -80,7 +79,6 @@
 		A1086C5A2D15237000C90A95 /* CoreLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationService.swift; sourceTree = "<group>"; };
 		A1086C622D15545300C90A95 /* MainSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSheetView.swift; sourceTree = "<group>"; };
 		A1086C642D15545900C90A95 /* MainSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSheetViewModel.swift; sourceTree = "<group>"; };
-		A1086C662D15615000C90A95 /* SheetSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetSizes.swift; sourceTree = "<group>"; };
 		A1F4C61E2D13F55D00FA09B2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A1F4C6202D13F56C00FA09B2 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		A1F4C6222D13FC5800FA09B2 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
@@ -271,7 +269,6 @@
 				A1086C5F2D15471100C90A95 /* CoreData */,
 				A1086C5C2D15285900C90A95 /* Extensions */,
 				A1086C4A2D150F5A00C90A95 /* CustomView */,
-				A1086C662D15615000C90A95 /* SheetSizes.swift */,
 				A1F4C6222D13FC5800FA09B2 /* CustomColor.swift */,
 				A1F4C6202D13F56C00FA09B2 /* CustomFont.swift */,
 				155830C42A1F044B0065D51B /* CustomButton.swift */,
@@ -396,7 +393,6 @@
 				A1F4C6282D13FDF000FA09B2 /* FirstTimeOpenViewModel.swift in Sources */,
 				15DC7D992D172D730018D218 /* ArchivesView.swift in Sources */,
 				15DC7DA02D1738440018D218 /* ThreeButtonView.swift in Sources */,
-				A1086C672D15615600C90A95 /* SheetSizes.swift in Sources */,
 				155830AC2A1E99930065D51B /* LegacyMainView.swift in Sources */,
 				155830AA2A1E99930065D51B /* Nano2.xcdatamodeld in Sources */,
 				A1086C652D15545C00C90A95 /* MainSheetViewModel.swift in Sources */,
