@@ -5,8 +5,26 @@
 //  Created by Elvis Susanto on 12/20/24.
 //
 
-public final class MainViewModel {
+import Foundation
+
+public final class MainViewModel: ObservableObject {
     
-    public init() {}
+    init(
+        _ userDefaultsService: UserDefaultsServiceable = UserDefaultsService.instance
+    ) {
+        
+        self.sheetVisibility = true
+        self.userDefaultsService = userDefaultsService
+        guard let _ : Bool = userDefaultsService.get(UserDefaultsKeyConstant.notOpenedBefore) else
+        {
+            self.sheetVisibility = false
+            return
+        }
+        
+    }
+    
+    var userDefaultsService : (any UserDefaultsServiceable)
+    
+    @Published var sheetVisibility : Bool
     
 }

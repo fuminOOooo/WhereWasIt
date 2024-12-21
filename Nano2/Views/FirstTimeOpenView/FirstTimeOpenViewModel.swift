@@ -13,21 +13,20 @@ public final class FirstTimeOpenViewModel: ObservableObject {
         _ userDefaultsService: UserDefaultsServiceable = UserDefaultsService.instance
     ) {
         self.userDefaultsService = userDefaultsService
+        guard let notOpenedBefore : Bool = userDefaultsService.get(UserDefaultsKeyConstant.notOpenedBefore) else {
+            notOpenedBefore = true
+            return
+        }
+        self.notOpenedBefore = notOpenedBefore
     }
+    
+    @Published var notOpenedBefore : Bool
     
     var userDefaultsService : (any UserDefaultsServiceable)
     
-    public func firstTimeCheck() -> Bool {
-        
-        guard let notOpenedBefore : Bool = userDefaultsService.get(StringConstant.notOpenedBefore) else { return true }
-        
-        return notOpenedBefore
-        
-    }
-    
     public func setFirstTime() {
         
-        userDefaultsService.set(key: StringConstant.notOpenedBefore, false)
+        userDefaultsService.set(key: UserDefaultsKeyConstant.notOpenedBefore, false)
         
     }
     

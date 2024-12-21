@@ -10,49 +10,49 @@ import SwiftUI
 struct FirstTimeOpenView: View {
     
     public init (
-        vm: FirstTimeOpenViewModel = FirstTimeOpenViewModel()
+        vm: FirstTimeOpenViewModel = FirstTimeOpenViewModel(),
+        sheetVisibility: Binding<Bool>
     ) {
         self.vm = vm
-        self.notOpenedBefore = vm.firstTimeCheck()
+        self._sheetVisibility = sheetVisibility
     }
     
     @ObservedObject var vm : FirstTimeOpenViewModel
-    @State var notOpenedBefore : Bool
+    @Binding var sheetVisibility : Bool
     
     var body: some View {
         
-        if notOpenedBefore {
+        MiddlePopupView(
             
-            MiddlePopupView(
+            shown: $vm.notOpenedBefore,
+            buttonText: StringConstant.mainViewText1,
+            buttonAction: {
+                vm.setFirstTime()
+                sheetVisibility.toggle()
+            }
+            
+        ) {
+            
+            VStack (alignment: .leading) {
                 
-                shown: $notOpenedBefore,
-                buttonText: StringConstant.mainViewText1,
-                buttonAction: vm.setFirstTime
+                Text(StringConstant.mainViewText2)
+                    .font(CustomFont.lightText14)
                 
-            ) {
+                Text(StringConstant.mainViewText3)
+                    .font(CustomFont.expandedBold)
                 
-                VStack (alignment: .leading) {
-                    
-                    Text(StringConstant.mainViewText2)
-                        .font(CustomFont.lightText14)
-                    
-                    Text(StringConstant.mainViewText3)
-                        .font(CustomFont.expandedBold)
-                    
-                    Divider()
-                        .overlay(Color.white)
-                        .padding(.bottom)
-                    
-                    Text(
-                        StringConstant.mainViewText4
-                    )
-                    .font(CustomFont.lightText17)
-                    
-                }
-                .foregroundColor(Color.white)
-                .padding(.bottom)
+                Divider()
+                    .overlay(Color.white)
+                    .padding(.bottom)
+                
+                Text(
+                    StringConstant.mainViewText4
+                )
+                .font(CustomFont.lightText17)
                 
             }
+            .foregroundColor(Color.white)
+            .padding(.bottom)
             
         }
         
@@ -62,6 +62,8 @@ struct FirstTimeOpenView: View {
 
 #Preview {
     
-    FirstTimeOpenView()
+    @Previewable @State var visibility: Bool = true
+    
+    FirstTimeOpenView(sheetVisibility: $visibility)
     
 }

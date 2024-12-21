@@ -10,17 +10,26 @@ import MapKit
 
 struct MainMapView: View {
     
+    @Environment(\.managedObjectContext) private var viewContext
+    
     public init (
         vm: MainMapViewModel = MainMapViewModel()
     ) {
         self.vm = vm
+        self.initialCameraPosition = {
+            let cameraPosition  = MapCameraPosition.item(MKMapItem.forCurrentLocation())
+            return MapCameraPosition.userLocation(followsHeading: true, fallback: cameraPosition)
+        }()
+        self.vm.getAllMapPins(context: viewContext)
     }
     
     @ObservedObject var vm : MainMapViewModel
     
+    @State private var initialCameraPosition : MapCameraPosition
+    
     var body: some View {
         
-        Map {
+        Map(position: $initialCameraPosition, interactionModes: .all) {
             
             UserAnnotation(
                 anchor: UnitPoint(
@@ -30,13 +39,16 @@ struct MainMapView: View {
             )
             
         }
-        .mapControls {
-            MapCompass()
-            MapUserLocationButton()
-        }
         .mapControlVisibility(.visible)
         .controlSize(.extraLarge)
-        .mapStyle(.hybrid)
+        .mapStyle(.standard)
+        .mapControls {
+            
+            MapCompass()
+            MapUserLocationButton()
+            MapPitchToggle()
+
+        }
         
     }
     

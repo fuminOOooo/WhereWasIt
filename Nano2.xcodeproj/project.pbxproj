@@ -8,24 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		1508DC662A1FC05200673445 /* MiddlePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1508DC652A1FC05200673445 /* MiddlePopupView.swift */; };
-		1508DC682A1FCB8300673445 /* OldInfoModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1508DC672A1FCB8300673445 /* OldInfoModal.swift */; };
+		1508DC682A1FCB8300673445 /* LegacyInfoModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1508DC672A1FCB8300673445 /* LegacyInfoModal.swift */; };
 		155830A52A1E99930065D51B /* Nano2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830A42A1E99930065D51B /* Nano2App.swift */; };
 		155830AA2A1E99930065D51B /* Nano2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 155830A82A1E99930065D51B /* Nano2.xcdatamodeld */; };
-		155830AC2A1E99930065D51B /* OldMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830AB2A1E99930065D51B /* OldMainView.swift */; };
+		155830AC2A1E99930065D51B /* LegacyMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830AB2A1E99930065D51B /* LegacyMainView.swift */; };
 		155830AE2A1E99950065D51B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 155830AD2A1E99950065D51B /* Assets.xcassets */; };
 		155830B22A1E99950065D51B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 155830B12A1E99950065D51B /* Preview Assets.xcassets */; };
-		155830BA2A1E9A0D0065D51B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830B92A1E9A0D0065D51B /* LocationManager.swift */; };
-		155830BD2A1E9D320065D51B /* OldMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830BC2A1E9D320065D51B /* OldMapView.swift */; };
-		155830BF2A1EA4200065D51B /* LandmarkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830BE2A1EA4200065D51B /* LandmarkConstants.swift */; };
-		155830C32A1F03460065D51B /* OldConfirmationModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830C22A1F03460065D51B /* OldConfirmationModal.swift */; };
+		155830BA2A1E9A0D0065D51B /* LegacyLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830B92A1E9A0D0065D51B /* LegacyLocationManager.swift */; };
+		155830BD2A1E9D320065D51B /* LegacyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830BC2A1E9D320065D51B /* LegacyMapView.swift */; };
+		155830BF2A1EA4200065D51B /* LegacyLandmarkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830BE2A1EA4200065D51B /* LegacyLandmarkConstants.swift */; };
+		155830C32A1F03460065D51B /* LegacyConfirmationModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830C22A1F03460065D51B /* LegacyConfirmationModal.swift */; };
 		155830C52A1F044B0065D51B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830C42A1F044B0065D51B /* CustomButton.swift */; };
 		15AF23742B149CFE0075F7D8 /* SF-Pro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15AF23722B149CFE0075F7D8 /* SF-Pro-Italic.ttf */; };
 		15AF23752B149CFE0075F7D8 /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15AF23732B149CFE0075F7D8 /* SF-Pro.ttf */; };
+		15C4DE2C2D15B61000D2009A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C4DE2B2D15B60B00D2009A /* CoreDataStack.swift */; };
+		15DC7D7B2D16FA330018D218 /* InputAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DC7D7A2D16FA330018D218 /* InputAlertView.swift */; };
+		15DC7D7D2D16FFCA0018D218 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DC7D7C2D16FFC80018D218 /* View.swift */; };
+		15DC7D962D172D550018D218 /* PresentationDetent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DC7D952D172D550018D218 /* PresentationDetent.swift */; };
+		15DC7D992D172D730018D218 /* ArchivesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DC7D972D172D730018D218 /* ArchivesView.swift */; };
+		15DC7D9C2D172D7C0018D218 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DC7D9A2D172D7C0018D218 /* SettingsView.swift */; };
+		15DC7DA02D1738440018D218 /* ThreeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DC7D9F2D1738440018D218 /* ThreeButtonView.swift */; };
+		15DC7DA22D174B830018D218 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DC7DA12D174B800018D218 /* SettingsViewModel.swift */; };
 		A1086C4D2D15102800C90A95 /* FirstTimeOpenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C4C2D15102800C90A95 /* FirstTimeOpenView.swift */; };
 		A1086C522D15129F00C90A95 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C512D15129C00C90A95 /* MainViewModel.swift */; };
 		A1086C572D151E8D00C90A95 /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C562D151E8D00C90A95 /* MainMapView.swift */; };
 		A1086C592D151FBF00C90A95 /* MainMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C582D151FBB00C90A95 /* MainMapViewModel.swift */; };
 		A1086C5B2D15237500C90A95 /* CoreLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C5A2D15237000C90A95 /* CoreLocationService.swift */; };
+		A1086C632D15545600C90A95 /* MainSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C622D15545300C90A95 /* MainSheetView.swift */; };
+		A1086C652D15545C00C90A95 /* MainSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C642D15545900C90A95 /* MainSheetViewModel.swift */; };
+		A1086C672D15615600C90A95 /* SheetSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C662D15615000C90A95 /* SheetSizes.swift */; };
 		A1F4C61F2D13F56000FA09B2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C61E2D13F55D00FA09B2 /* Constants.swift */; };
 		A1F4C6212D13F57100FA09B2 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C6202D13F56C00FA09B2 /* CustomFont.swift */; };
 		A1F4C6232D13FC5B00FA09B2 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C6222D13FC5800FA09B2 /* CustomColor.swift */; };
@@ -36,27 +47,38 @@
 
 /* Begin PBXFileReference section */
 		1508DC652A1FC05200673445 /* MiddlePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddlePopupView.swift; sourceTree = "<group>"; };
-		1508DC672A1FCB8300673445 /* OldInfoModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldInfoModal.swift; sourceTree = "<group>"; };
+		1508DC672A1FCB8300673445 /* LegacyInfoModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyInfoModal.swift; sourceTree = "<group>"; };
 		155830A12A1E99930065D51B /* Nano2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nano2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		155830A42A1E99930065D51B /* Nano2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano2App.swift; sourceTree = "<group>"; };
 		155830A92A1E99930065D51B /* Nano2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Nano2.xcdatamodel; sourceTree = "<group>"; };
-		155830AB2A1E99930065D51B /* OldMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldMainView.swift; sourceTree = "<group>"; };
+		155830AB2A1E99930065D51B /* LegacyMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyMainView.swift; sourceTree = "<group>"; };
 		155830AD2A1E99950065D51B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		155830AF2A1E99950065D51B /* Nano2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nano2.entitlements; sourceTree = "<group>"; };
 		155830B12A1E99950065D51B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		155830B92A1E9A0D0065D51B /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		155830B92A1E9A0D0065D51B /* LegacyLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyLocationManager.swift; sourceTree = "<group>"; };
 		155830BB2A1E9C1D0065D51B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		155830BC2A1E9D320065D51B /* OldMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldMapView.swift; sourceTree = "<group>"; };
-		155830BE2A1EA4200065D51B /* LandmarkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkConstants.swift; sourceTree = "<group>"; };
-		155830C22A1F03460065D51B /* OldConfirmationModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldConfirmationModal.swift; sourceTree = "<group>"; };
+		155830BC2A1E9D320065D51B /* LegacyMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyMapView.swift; sourceTree = "<group>"; };
+		155830BE2A1EA4200065D51B /* LegacyLandmarkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyLandmarkConstants.swift; sourceTree = "<group>"; };
+		155830C22A1F03460065D51B /* LegacyConfirmationModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyConfirmationModal.swift; sourceTree = "<group>"; };
 		155830C42A1F044B0065D51B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		15AF23722B149CFE0075F7D8 /* SF-Pro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Italic.ttf"; sourceTree = "<group>"; };
 		15AF23732B149CFE0075F7D8 /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
+		15C4DE2B2D15B60B00D2009A /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		15DC7D7A2D16FA330018D218 /* InputAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAlertView.swift; sourceTree = "<group>"; };
+		15DC7D7C2D16FFC80018D218 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		15DC7D952D172D550018D218 /* PresentationDetent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationDetent.swift; sourceTree = "<group>"; };
+		15DC7D972D172D730018D218 /* ArchivesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivesView.swift; sourceTree = "<group>"; };
+		15DC7D9A2D172D7C0018D218 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		15DC7D9F2D1738440018D218 /* ThreeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeButtonView.swift; sourceTree = "<group>"; };
+		15DC7DA12D174B800018D218 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		A1086C4C2D15102800C90A95 /* FirstTimeOpenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeOpenView.swift; sourceTree = "<group>"; };
 		A1086C512D15129C00C90A95 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		A1086C562D151E8D00C90A95 /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
 		A1086C582D151FBB00C90A95 /* MainMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewModel.swift; sourceTree = "<group>"; };
 		A1086C5A2D15237000C90A95 /* CoreLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationService.swift; sourceTree = "<group>"; };
+		A1086C622D15545300C90A95 /* MainSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSheetView.swift; sourceTree = "<group>"; };
+		A1086C642D15545900C90A95 /* MainSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSheetViewModel.swift; sourceTree = "<group>"; };
+		A1086C662D15615000C90A95 /* SheetSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetSizes.swift; sourceTree = "<group>"; };
 		A1F4C61E2D13F55D00FA09B2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A1F4C6202D13F56C00FA09B2 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		A1F4C6222D13FC5800FA09B2 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
@@ -95,14 +117,12 @@
 		155830A32A1E99930065D51B /* Nano2 */ = {
 			isa = PBXGroup;
 			children = (
-				A1086C5F2D15471100C90A95 /* CoreData */,
+				A1086C6E2D1576C100C90A95 /* Legacy */,
 				A1F4C62B2D140F1B00FA09B2 /* Services */,
 				A1F4C61D2D13F54D00FA09B2 /* Shared */,
 				155830C12A1EA4F60065D51B /* Views */,
-				155830C02A1EA4E80065D51B /* Models */,
 				155830BB2A1E9C1D0065D51B /* Info.plist */,
 				155830A42A1E99930065D51B /* Nano2App.swift */,
-				155830B92A1E9A0D0065D51B /* LocationManager.swift */,
 				155830AD2A1E99950065D51B /* Assets.xcassets */,
 				155830AF2A1E99950065D51B /* Nano2.entitlements */,
 				155830B02A1E99950065D51B /* Preview Content */,
@@ -120,51 +140,70 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		155830C02A1EA4E80065D51B /* Models */ = {
+		155830C02A1EA4E80065D51B /* LegacyModels */ = {
 			isa = PBXGroup;
 			children = (
-				155830BE2A1EA4200065D51B /* LandmarkConstants.swift */,
+				155830BE2A1EA4200065D51B /* LegacyLandmarkConstants.swift */,
 			);
-			path = Models;
+			path = LegacyModels;
 			sourceTree = "<group>";
 		};
 		155830C12A1EA4F60065D51B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				15DC7D9B2D172D7C0018D218 /* SettingsView */,
+				15DC7D982D172D730018D218 /* ArchivesView */,
+				A1086C612D15544800C90A95 /* MainSheetView */,
 				A1086C502D1510CD00C90A95 /* FirstTimeOpenView */,
 				A1086C532D151E7700C90A95 /* MainMapView */,
 				A1F4C6262D13FDE400FA09B2 /* MainView */,
-				A1086C492D150F4800C90A95 /* Components */,
-				A1086C4B2D150F9900C90A95 /* OldViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		A1086C492D150F4800C90A95 /* Components */ = {
+		15C4DE2A2D15B55000D2009A /* LocationItem */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Components;
+			path = LocationItem;
+			sourceTree = "<group>";
+		};
+		15DC7D982D172D730018D218 /* ArchivesView */ = {
+			isa = PBXGroup;
+			children = (
+				15DC7D972D172D730018D218 /* ArchivesView.swift */,
+			);
+			path = ArchivesView;
+			sourceTree = "<group>";
+		};
+		15DC7D9B2D172D7C0018D218 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				15DC7DA12D174B800018D218 /* SettingsViewModel.swift */,
+				15DC7D9A2D172D7C0018D218 /* SettingsView.swift */,
+			);
+			path = SettingsView;
 			sourceTree = "<group>";
 		};
 		A1086C4A2D150F5A00C90A95 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				155830C42A1F044B0065D51B /* CustomButton.swift */,
 				1508DC652A1FC05200673445 /* MiddlePopupView.swift */,
+				15DC7D7A2D16FA330018D218 /* InputAlertView.swift */,
+				15DC7D9F2D1738440018D218 /* ThreeButtonView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
 		};
-		A1086C4B2D150F9900C90A95 /* OldViews */ = {
+		A1086C4B2D150F9900C90A95 /* LegacyViews */ = {
 			isa = PBXGroup;
 			children = (
-				155830C22A1F03460065D51B /* OldConfirmationModal.swift */,
-				155830BC2A1E9D320065D51B /* OldMapView.swift */,
-				155830AB2A1E99930065D51B /* OldMainView.swift */,
-				1508DC672A1FCB8300673445 /* OldInfoModal.swift */,
+				155830C22A1F03460065D51B /* LegacyConfirmationModal.swift */,
+				155830BC2A1E9D320065D51B /* LegacyMapView.swift */,
+				155830AB2A1E99930065D51B /* LegacyMainView.swift */,
+				1508DC672A1FCB8300673445 /* LegacyInfoModal.swift */,
 			);
-			path = OldViews;
+			path = LegacyViews;
 			sourceTree = "<group>";
 		};
 		A1086C502D1510CD00C90A95 /* FirstTimeOpenView */ = {
@@ -179,8 +218,8 @@
 		A1086C532D151E7700C90A95 /* MainMapView */ = {
 			isa = PBXGroup;
 			children = (
-				A1086C582D151FBB00C90A95 /* MainMapViewModel.swift */,
 				A1086C562D151E8D00C90A95 /* MainMapView.swift */,
+				A1086C582D151FBB00C90A95 /* MainMapViewModel.swift */,
 			);
 			path = MainMapView;
 			sourceTree = "<group>";
@@ -188,6 +227,8 @@
 		A1086C5C2D15285900C90A95 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				15DC7D952D172D550018D218 /* PresentationDetent.swift */,
+				15DC7D7C2D16FFC80018D218 /* View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -195,19 +236,43 @@
 		A1086C5F2D15471100C90A95 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				15C4DE2B2D15B60B00D2009A /* CoreDataStack.swift */,
+				15C4DE2A2D15B55000D2009A /* LocationItem */,
 				155830A82A1E99930065D51B /* Nano2.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		A1086C612D15544800C90A95 /* MainSheetView */ = {
+			isa = PBXGroup;
+			children = (
+				A1086C622D15545300C90A95 /* MainSheetView.swift */,
+				A1086C642D15545900C90A95 /* MainSheetViewModel.swift */,
+			);
+			path = MainSheetView;
+			sourceTree = "<group>";
+		};
+		A1086C6E2D1576C100C90A95 /* Legacy */ = {
+			isa = PBXGroup;
+			children = (
+				155830B92A1E9A0D0065D51B /* LegacyLocationManager.swift */,
+				155830C02A1EA4E80065D51B /* LegacyModels */,
+				A1086C4B2D150F9900C90A95 /* LegacyViews */,
+			);
+			path = Legacy;
+			sourceTree = "<group>";
+		};
 		A1F4C61D2D13F54D00FA09B2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A1086C5F2D15471100C90A95 /* CoreData */,
+				A1086C5C2D15285900C90A95 /* Extensions */,
 				A1086C4A2D150F5A00C90A95 /* CustomView */,
+				A1086C662D15615000C90A95 /* SheetSizes.swift */,
 				A1F4C6222D13FC5800FA09B2 /* CustomColor.swift */,
 				A1F4C6202D13F56C00FA09B2 /* CustomFont.swift */,
+				155830C42A1F044B0065D51B /* CustomButton.swift */,
 				A1F4C61E2D13F55D00FA09B2 /* Constants.swift */,
-				A1086C5C2D15285900C90A95 /* Extensions */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -215,8 +280,8 @@
 		A1F4C6262D13FDE400FA09B2 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				A1086C512D15129C00C90A95 /* MainViewModel.swift */,
 				A1F4C6242D13FDCF00FA09B2 /* MainView.swift */,
+				A1086C512D15129C00C90A95 /* MainViewModel.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -258,7 +323,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1610;
 				TargetAttributes = {
 					155830A02A1E99930065D51B = {
 						CreatedOnToolsVersion = 14.3;
@@ -302,27 +367,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				155830C32A1F03460065D51B /* OldConfirmationModal.swift in Sources */,
+				155830C32A1F03460065D51B /* LegacyConfirmationModal.swift in Sources */,
 				A1F4C6252D13FDD400FA09B2 /* MainView.swift in Sources */,
 				A1086C4D2D15102800C90A95 /* FirstTimeOpenView.swift in Sources */,
-				155830BF2A1EA4200065D51B /* LandmarkConstants.swift in Sources */,
+				155830BF2A1EA4200065D51B /* LegacyLandmarkConstants.swift in Sources */,
 				155830C52A1F044B0065D51B /* CustomButton.swift in Sources */,
 				A1F4C6212D13F57100FA09B2 /* CustomFont.swift in Sources */,
-				155830BA2A1E9A0D0065D51B /* LocationManager.swift in Sources */,
-				155830BD2A1E9D320065D51B /* OldMapView.swift in Sources */,
+				155830BA2A1E9A0D0065D51B /* LegacyLocationManager.swift in Sources */,
+				155830BD2A1E9D320065D51B /* LegacyMapView.swift in Sources */,
+				15DC7D7B2D16FA330018D218 /* InputAlertView.swift in Sources */,
 				A1086C592D151FBF00C90A95 /* MainMapViewModel.swift in Sources */,
+				A1086C632D15545600C90A95 /* MainSheetView.swift in Sources */,
+				15DC7D962D172D550018D218 /* PresentationDetent.swift in Sources */,
 				A1086C5B2D15237500C90A95 /* CoreLocationService.swift in Sources */,
+				15DC7D7D2D16FFCA0018D218 /* View.swift in Sources */,
 				1508DC662A1FC05200673445 /* MiddlePopupView.swift in Sources */,
+				15DC7DA22D174B830018D218 /* SettingsViewModel.swift in Sources */,
+				15DC7D9C2D172D7C0018D218 /* SettingsView.swift in Sources */,
 				155830A52A1E99930065D51B /* Nano2App.swift in Sources */,
 				A1F4C6232D13FC5B00FA09B2 /* CustomColor.swift in Sources */,
 				A1F4C62D2D140F2E00FA09B2 /* UserDefaultsService.swift in Sources */,
 				A1086C522D15129F00C90A95 /* MainViewModel.swift in Sources */,
-				1508DC682A1FCB8300673445 /* OldInfoModal.swift in Sources */,
+				1508DC682A1FCB8300673445 /* LegacyInfoModal.swift in Sources */,
 				A1F4C6282D13FDF000FA09B2 /* FirstTimeOpenViewModel.swift in Sources */,
-				155830AC2A1E99930065D51B /* OldMainView.swift in Sources */,
+				15DC7D992D172D730018D218 /* ArchivesView.swift in Sources */,
+				15DC7DA02D1738440018D218 /* ThreeButtonView.swift in Sources */,
+				A1086C672D15615600C90A95 /* SheetSizes.swift in Sources */,
+				155830AC2A1E99930065D51B /* LegacyMainView.swift in Sources */,
 				155830AA2A1E99930065D51B /* Nano2.xcdatamodeld in Sources */,
+				A1086C652D15545C00C90A95 /* MainSheetViewModel.swift in Sources */,
 				A1086C572D151E8D00C90A95 /* MainMapView.swift in Sources */,
 				A1F4C61F2D13F56000FA09B2 /* Constants.swift in Sources */,
+				15C4DE2C2D15B61000D2009A /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,9 +438,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -420,9 +498,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -446,6 +526,7 @@
 				CODE_SIGN_ENTITLEMENTS = Nano2/Nano2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Nano2/Preview Content\"";
 				DEVELOPMENT_TEAM = 35V95TRX69;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -467,12 +548,12 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ElvisSusanto.WhereWasIt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -487,6 +568,7 @@
 				CODE_SIGN_ENTITLEMENTS = Nano2/Nano2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Nano2/Preview Content\"";
 				DEVELOPMENT_TEAM = 35V95TRX69;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -508,12 +590,12 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ElvisSusanto.WhereWasIt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
