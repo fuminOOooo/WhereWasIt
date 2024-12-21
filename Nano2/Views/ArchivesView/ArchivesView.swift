@@ -9,15 +9,44 @@ import SwiftUI
 
 struct ArchivesView: View {
     
+    @FetchRequest(sortDescriptors: []) var locationitems: FetchedResults<LocationItem>
+    
     public init(onDismiss: (@escaping () -> Void)) {
         self.onDismiss = onDismiss
     }
     
+    @StateObject private var vm : ArchivesViewModel = .init()
+    
     private let onDismiss : (() -> Void)
     
     var body: some View {
-        VStack {
+        
+        NavigationStack {
             
+            List {
+                
+                Section {
+                    
+                    ForEach(locationitems) { locationitem in
+                        
+                        let name = locationitem.name ?? String()
+                        
+                        NavigationLink(name) {
+                            
+                            
+                            
+                        }
+                        
+                    }
+                
+                } header: {
+                    
+                    Text(StringConstant.locationsSaved)
+                    
+                }
+                
+            }
+            .listStyle(.insetGrouped)
         }
         .useCustomToolbar(
             StringConstant.listButtonText,
@@ -25,5 +54,6 @@ struct ArchivesView: View {
                 onDismiss()
             }
         )
+        .navigationBarBackButtonHidden()
     }
 }

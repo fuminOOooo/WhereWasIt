@@ -19,23 +19,9 @@ public final class MainMapViewModel : ObservableObject {
     
     var coreLocationService : (any CoreLocationServiceable)
     
-    @Published var locationItems : [LocationItem] = []
-    
     func getUserCoordinates() -> CLLocationCoordinate2D {
         
         return CLLocationCoordinate2D(latitude: getUserLatitude(), longitude: getUserLongitude())
-        
-    }
-    
-    func getAllMapPins(context: NSManagedObjectContext) {
-        
-        let request = NSFetchRequest<LocationItem>(entityName: CoreDataKeyConstant.locationItem)
-        do {
-            let fetchedItems = try context.fetch(request)
-            locationItems = fetchedItems
-        } catch {
-            fatalError("Failed to fetch items: \(error)")
-        }
         
     }
     

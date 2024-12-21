@@ -19,8 +19,6 @@ public final class MainSheetViewModel: ObservableObject {
     
     var coreLocationService : (any CoreLocationServiceable)
     
-    @Published var savedLocationsCount : Int = .init()
-    
     @Published var savedLocationName : String = .init()
     
     func saveCurrentLocation(context : NSManagedObjectContext) {
@@ -35,6 +33,7 @@ public final class MainSheetViewModel: ObservableObject {
         
         do {
             try context.save()
+            savedLocationName = String()
         } catch {
             print(StringConstant.failedSave)
         }

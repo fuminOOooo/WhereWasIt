@@ -10,7 +10,7 @@ import MapKit
 
 struct MainMapView: View {
     
-    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(sortDescriptors: []) var locationitems: FetchedResults<LocationItem>
     
     public init (
         vm: MainMapViewModel = MainMapViewModel()
@@ -20,7 +20,6 @@ struct MainMapView: View {
             let cameraPosition  = MapCameraPosition.item(MKMapItem.forCurrentLocation())
             return MapCameraPosition.userLocation(followsHeading: true, fallback: cameraPosition)
         }()
-        self.vm.getAllMapPins(context: viewContext)
     }
     
     @ObservedObject var vm : MainMapViewModel
@@ -29,7 +28,10 @@ struct MainMapView: View {
     
     var body: some View {
         
-        Map(position: $initialCameraPosition, interactionModes: .all) {
+        Map(
+            position: $initialCameraPosition,
+            interactionModes: .all
+        ) {
             
             UserAnnotation(
                 anchor: UnitPoint(
@@ -37,6 +39,18 @@ struct MainMapView: View {
                     y: vm.getUserLatitude()
                 )
             )
+            
+            ForEach(locationitems) { locationItem in
+                Annotation(
+                    locationItem.name ?? String(),
+                    coordinate: CLLocationCoordinate2D(
+                        latitude: locationItem.latitude,
+                        longitude: locationItem.longitude
+                    )
+                ) {
+                    
+                }
+            }
             
         }
         .mapControlVisibility(.visible)
