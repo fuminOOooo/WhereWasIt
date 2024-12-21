@@ -11,49 +11,91 @@ import SwiftUI
 struct MainSheetView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
-    
     @State private var expanded = false
     @StateObject var vm : MainSheetViewModel = MainSheetViewModel()
-    @State private var currentDetent : PresentationDetent = SheetSizes.peek.detent
+    @State private var detents : Set<PresentationDetent> = [.small]
+    @State private var currentDetent : PresentationDetent = .small
     @State private var saveLocation : Bool = false
+    
+    private func expandDetent() {
+        detents.insert(.large)
+        currentDetent = .large
+    }
+    
+    private func shrinkDetent() {
+        detents.insert(.small)
+        currentDetent = .small
+    }
+    
     
     var body: some View {
         
-        VStack {
-            
+        NavigationStack {
+              
             if expanded {
                 
-                Text("NOT SHOWING buttons")
-                    .font(.title2)
-                    .bold()
-                // TODO: Add actions view when sheet is expanded
+                ArchivesView()
                 
             } else {
                 
-                Text("SHOWING buttons")
-                    .font(.title2)
-                    .bold()
-                // TODO: Add functionality to check saved locations
-                
-                PeekDetentView(
-                    settingsButtonAction: {
+                VStack {
+                    
+                    Text(String(vm.savedLocationsCount) + StringConstant.space + StringConstant.locationsSaved)
+                        .font(.title2)
+                        .bold()
+                    
+                    HStack {
                         
-                    },
-                    pinButtonAction: {
-                        saveLocation.toggle()
-                    },
-                    archivesButtonAction: {
+                        NavigationLink(
+                            destination: SettingsView(
+                                onDismiss: shrinkDetent
+                            )
+                        ) {
+                            VStack {
+                                
+                                Image(systemName: ImageNameConstant.settingsButtonImage)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .padding()
+                                
+                                Text(StringConstant.settingsButtonText)
+                                    .font(CustomFont.lightText14)
+                                    .foregroundStyle(Color.primary)
+                                
+                            }
+                        }
+                        .simultaneousGesture(
+                            TapGesture().onEnded {
+                                expandDetent()
+                            }
+                        )
+                        
+                        SystemImageButton(
+                            StringConstant.pinButtonText,
+                            imageName: ImageNameConstant.pinButtonImage
+                        ) {
+                            saveLocation.toggle()
+                        }
+                        
+                        SystemImageButton(
+                            StringConstant.listButtonText,
+                            imageName: ImageNameConstant.listButtonImage
+                        ) {
+                            expandDetent()
+                        }
                         
                     }
-                )
+                    .padding([.horizontal, .bottom])
+                    
+                }
                 
             }
             
         }
         .animation(.easeInOut, value: expanded)
         .padding(.top)
-        .presentationDetents(SheetSizes.detents, selection: $currentDetent)
-        .presentationBackgroundInteraction(.enabled(upThrough: SheetSizes.peek.detent))
+        .presentationDetents(detents, selection: $currentDetent)
+        .presentationBackgroundInteraction(.enabled(upThrough: .small))
         .presentationDragIndicator(Visibility.hidden)
         .presentationCornerRadius(NumberConstant.defaultCornerRadiusSize)
         .interactiveDismissDisabled()
@@ -63,10 +105,12 @@ struct MainSheetView: View {
                 
                 await MainActor.run {
                     switch currentDetent {
-                    case SheetSizes.peek.detent:
+                    case .small:
                         expanded = false
-                    case SheetSizes.detailed.detent:
+                        detents.remove(.large)
+                    case .large:
                         expanded = true
+                        detents.remove(.small)
                     default: break
                     }
                 }

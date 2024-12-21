@@ -17,6 +17,55 @@ extension View {
         buttonStyle(BorderButton())
     }
     
+    @ViewBuilder
+    func useCustomToolbar(onDismiss: @escaping (() -> Void)) -> some View {
+        self
+            .navigationBarBackButtonHidden()
+            .toolbar {
+                ToolbarItemGroup(placement: .topBarLeading) {
+                    Button {
+                        onDismiss()
+                    } label: {
+                        Image(systemName: ImageNameConstant.xmarkImage)
+                            .aspectRatio(contentMode: .fit)
+                            .foregroundColor(.primary)
+                    }
+                }
+            }
+    }
+    
+    @ViewBuilder
+    func SystemImageButton(_ text: String, imageName: String, _ action: @escaping (() -> Void)) -> some View {
+        
+        Button {
+            
+            action()
+            
+        } label: {
+            
+            VStack {
+                
+                Image(systemName: imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding()
+                
+                Text(text)
+                    .font(CustomFont.lightText14)
+                    .foregroundStyle(Color.primary)
+                
+            }
+            
+        }
+
+    }
+    
+}
+
+extension Button {
+    
+    
+    
 }
 
 struct FillButton: ButtonStyle {

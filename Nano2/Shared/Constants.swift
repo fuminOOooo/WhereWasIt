@@ -25,11 +25,15 @@ public final class StringConstant {
     
     static let failedSave = "Failed saving to core data"
     
+    static let locationsSaved = "Locations Saved"
+    
     static let settingsButtonText = "Settings"
     
     static let pinButtonText = "Save Here"
     
     static let listButtonText = "Archives"
+    
+    static let space = " "
     
 }
 
@@ -47,6 +51,8 @@ public final class ImageNameConstant {
     
     static let listButtonImage = "list.bullet.circle.fill"
     
+    static let xmarkImage = "xmark"
+    
 }
 
 public final class NumberConstant {
@@ -58,5 +64,7 @@ public final class NumberConstant {
     static let defaultCornerRadiusSize = 8.0
     
     static let defaultDimmedBackgroundOpacity = 0.5
+    
+    static let defaultPeekDetentFractionValue = 0.3
     
 }
