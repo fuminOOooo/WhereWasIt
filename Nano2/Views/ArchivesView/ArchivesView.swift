@@ -8,7 +8,18 @@
 import SwiftUI
 
 struct ArchivesView: View {
+    public init(onDismiss: (@escaping () -> Void)) {
+        self.onDismiss = onDismiss
+    }
+    private let onDismiss : (() -> Void)
     var body: some View {
-        Text(StringConstant.settingsButtonText)
+        VStack {
+            Text(StringConstant.listButtonText)
+        }
+        .useCustomToolbar(
+            onDismiss: {
+                onDismiss()
+            }
+        )
     }
 }

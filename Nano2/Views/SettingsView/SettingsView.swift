@@ -9,8 +9,6 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
     public init(onDismiss: @escaping () -> Void) {
         self.onDismiss = onDismiss
     }
@@ -22,10 +20,10 @@ struct SettingsView: View {
         VStack {
             Text(StringConstant.settingsButtonText)
         }
+        .navigationBarTitleDisplayMode(.inline)
         .useCustomToolbar(
             onDismiss: {
                 onDismiss()
-                presentationMode.wrappedValue.dismiss()
             }
         )
         

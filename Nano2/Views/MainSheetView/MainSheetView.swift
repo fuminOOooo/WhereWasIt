@@ -5,7 +5,6 @@
 //  Created by Elvis Susanto on 12/20/24.
 //
 
-
 import SwiftUI
 
 struct MainSheetView: View {
@@ -16,6 +15,7 @@ struct MainSheetView: View {
     @State private var detents : Set<PresentationDetent> = [.small]
     @State private var currentDetent : PresentationDetent = .small
     @State private var saveLocation : Bool = false
+    @State private var currentDetails : CurrentView = .none
     
     private func expandDetent() {
         detents.insert(.large)
@@ -30,62 +30,63 @@ struct MainSheetView: View {
     
     var body: some View {
         
-        NavigationStack {
-              
-            if expanded {
-                
-                ArchivesView()
-                
-            } else {
-                
-                VStack {
+        NavigationView {
+            
+            VStack {
+                  
+                if expanded {
                     
-                    Text(String(vm.savedLocationsCount) + StringConstant.space + StringConstant.locationsSaved)
-                        .font(.title2)
-                        .bold()
-                    
-                    HStack {
-                        
-                        NavigationLink(
-                            destination: SettingsView(
-                                onDismiss: shrinkDetent
-                            )
-                        ) {
-                            VStack {
-                                
-                                Image(systemName: ImageNameConstant.settingsButtonImage)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .padding()
-                                
-                                Text(StringConstant.settingsButtonText)
-                                    .font(CustomFont.lightText14)
-                                    .foregroundStyle(Color.primary)
-                                
-                            }
-                        }
-                        .simultaneousGesture(
-                            TapGesture().onEnded {
-                                expandDetent()
-                            }
+                    switch currentDetails {
+                    case .settings:
+                        SettingsView(
+                            onDismiss: shrinkDetent
                         )
+                    case .archives:
+                        ArchivesView(
+                            onDismiss: shrinkDetent
+                        )
+                    case .none:
+                        Text("")
+                    }
+                    
+                    
+                } else {
+                    
+                    VStack {
                         
-                        SystemImageButton(
-                            StringConstant.pinButtonText,
-                            imageName: ImageNameConstant.pinButtonImage
-                        ) {
-                            saveLocation.toggle()
-                        }
+                        Text(String(vm.savedLocationsCount) + StringConstant.space + StringConstant.locationsSaved)
+                            .font(.title2)
+                            .bold()
                         
-                        SystemImageButton(
-                            StringConstant.listButtonText,
-                            imageName: ImageNameConstant.listButtonImage
-                        ) {
-                            expandDetent()
+                        HStack {
+                            
+                            SystemImageButton(
+                                StringConstant.settingsButtonText,
+                                imageName: ImageNameConstant.settingsButtonImage
+                            ) {
+                                expandDetent()
+                                currentDetails = .settings
+                            }
+                            
+                            SystemImageButton(
+                                StringConstant.pinButtonText,
+                                imageName: ImageNameConstant.pinButtonImage
+                            ) {
+                                saveLocation.toggle()
+                            }
+                            
+                            SystemImageButton(
+                                StringConstant.listButtonText,
+                                imageName: ImageNameConstant.listButtonImage
+                            ) {
+                                expandDetent()
+                                currentDetails = .archives
+                            }
+                            
                         }
+                        .padding([.horizontal, .bottom])
                         
                     }
-                    .padding([.horizontal, .bottom])
                     
                 }
                 
@@ -136,6 +137,16 @@ struct MainSheetView: View {
             
         }
         
+    }
+    
+}
+
+extension MainSheetView {
+    
+    enum CurrentView {
+        case settings
+        case archives
+        case none
     }
     
 }
