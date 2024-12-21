@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainSheetView: View {
     
+    @FetchRequest(sortDescriptors: []) var locationitems: FetchedResults<LocationItem>
     @Environment(\.managedObjectContext) private var viewContext
     @State private var expanded = false
     @StateObject var vm : MainSheetViewModel = MainSheetViewModel()
@@ -53,7 +54,7 @@ struct MainSheetView: View {
                 } else {
                     
                     ThreeButtonView(
-                        locationsCount: vm.savedLocationsCount,
+                        locationsCount: locationitems.count,
                         settingsButtonAction: {
                             expandDetent()
                             currentDetails = .settings

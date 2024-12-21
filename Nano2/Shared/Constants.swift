@@ -39,6 +39,8 @@ public final class StringConstant {
     
     static let space = " "
     
+    static let dash = "-"
+    
 }
 
 public final class UserDefaultsKeyConstant {

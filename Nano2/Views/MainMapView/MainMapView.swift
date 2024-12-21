@@ -10,7 +10,6 @@ import MapKit
 
 struct MainMapView: View {
     
-    @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: []) var locationitems: FetchedResults<LocationItem>
     
     public init (
