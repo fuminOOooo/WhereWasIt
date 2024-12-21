@@ -7,40 +7,56 @@
 
 public final class StringConstant {
     
-    public static let notOpenedBefore = "NotOpenedBefore"
+    static let mainViewText1 = "Get Started"
     
-    public static let mainViewText1 = "Get Started"
+    static let mainViewText2 = "Welcome to"
     
-    public static let mainViewText2 = "Welcome to"
+    static let mainViewText3 = "Where Was It?"
     
-    public static let mainViewText3 = "Where Was It?"
+    static let mainViewText4 = "An app created for your sudden \"I'll visit this place again later, gotta note it just in case..\" type of situations."
     
-    public static let mainViewText4 = "An app created for your sudden \"I'll visit this place again later, gotta note it just in case..\" type of situations."
+    static let cancelAlertViewText = "Cancel"
     
-    public static let settingsButtonText = "Settings"
+    static let saveAlertViewText = "Save"
     
-    public static let pinButtonText = "Save Here"
+    static let saveLocationAlertViewText1 = "Save Current Location"
     
-    public static let listButtonText = "Archives"
+    static let saveLocationAlertViewText2 = "Enter location name"
+    
+    static let failedSave = "Failed saving to core data"
+    
+    static let settingsButtonText = "Settings"
+    
+    static let pinButtonText = "Save Here"
+    
+    static let listButtonText = "Archives"
+    
+}
+
+public final class CoreDataKeyConstant {
+    
+    static let notOpenedBefore = "NotOpenedBefore"
     
 }
 
 public final class ImageNameConstant {
     
-    public static let settingsButtonImage = "gear.circle.fill"
+    static let settingsButtonImage = "gear.circle.fill"
     
-    public static let pinButtonImage = "mappin.and.ellipse.circle.fill"
+    static let pinButtonImage = "mappin.and.ellipse.circle.fill"
     
-    public static let listButtonImage = "list.bullet.circle.fill"
+    static let listButtonImage = "list.bullet.circle.fill"
     
 }
 
 public final class NumberConstant {
     
-    public static let defaultAnimationSleepMillisecondValue = 50
+    static let defaultAnimationSleepMillisecondValue = 50
     
-    public static let defaultCornerRadiusSize = 8.0
+    static let defaultCameraDistance = 100.0
     
-    public static let defaultDimmedBackgroundOpacity = 0.5
+    static let defaultCornerRadiusSize = 8.0
+    
+    static let defaultDimmedBackgroundOpacity = 0.5
     
 }

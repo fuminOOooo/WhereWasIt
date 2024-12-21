@@ -6,7 +6,10 @@
 //
 
 import Foundation
+import CoreData
 
 public final class PeekDetentViewModel : ObservableObject {
+    
     public init() {}
+    
 }

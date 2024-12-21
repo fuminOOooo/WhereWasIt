@@ -10,9 +10,12 @@ import SwiftUI
 
 struct MainSheetView: View {
     
+    @Environment(\.managedObjectContext) private var viewContext
+    
     @State private var expanded = false
     @StateObject var vm : MainSheetViewModel = MainSheetViewModel()
     @State private var currentDetent : PresentationDetent = SheetSizes.peek.detent
+    @State private var saveLocation : Bool = false
     
     var body: some View {
         
@@ -37,7 +40,7 @@ struct MainSheetView: View {
                         
                     },
                     pinButtonAction: {
-                        
+                        saveLocation.toggle()
                     },
                     archivesButtonAction: {
                         
@@ -71,20 +74,24 @@ struct MainSheetView: View {
             }
             
         })
+        .alert(
+            StringConstant.saveLocationAlertViewText1,
+            isPresented: $saveLocation
+        ) {
+            
+            InputAlertView(
+                placeholder: StringConstant.saveLocationAlertViewText2,
+                textInput: $vm.savedLocationName,
+                cancelAction: {
+                    saveLocation = false
+                },
+                buttonAction: {
+                    vm.saveCurrentLocation(context: viewContext)
+                }
+            )
+            
+        }
         
     }
-    
-}
-
-#Preview {
-    
-    @Previewable @State var sheetOpened: Bool = true
-    
-    VStack{}
-        .sheet(
-            isPresented: $sheetOpened
-        ) {
-            MainSheetView()
-        }
     
 }

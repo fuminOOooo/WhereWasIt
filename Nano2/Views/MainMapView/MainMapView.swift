@@ -14,13 +14,19 @@ struct MainMapView: View {
         vm: MainMapViewModel = MainMapViewModel()
     ) {
         self.vm = vm
+        self.initialCameraPosition = {
+            let cameraPosition  = MapCameraPosition.item(MKMapItem.forCurrentLocation())
+            return MapCameraPosition.userLocation(followsHeading: true, fallback: cameraPosition)
+        }()
     }
     
     @ObservedObject var vm : MainMapViewModel
     
+    @State private var initialCameraPosition : MapCameraPosition
+    
     var body: some View {
         
-        Map {
+        Map(position: $initialCameraPosition, interactionModes: .all) {
             
             UserAnnotation(
                 anchor: UnitPoint(
@@ -32,7 +38,7 @@ struct MainMapView: View {
         }
         .mapControlVisibility(.visible)
         .controlSize(.extraLarge)
-        .mapStyle(.hybrid)
+        .mapStyle(.standard)
         .mapControls {
             
             MapCompass()

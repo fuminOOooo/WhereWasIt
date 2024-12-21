@@ -9,7 +9,13 @@ import SwiftUI
 
 struct MainView: View {
     
-    @State private var showingSheet : Bool = true
+    public init (
+        vm: MainViewModel = MainViewModel()
+    ) {
+        self.vm = vm
+    }
+    
+    @ObservedObject var vm : MainViewModel
     
     var body: some View {
         
@@ -17,13 +23,13 @@ struct MainView: View {
             
             MainMapView()
             
-            FirstTimeOpenView()
+            FirstTimeOpenView(sheetVisibility: $vm.sheetVisibility)
             
         }
-        .sheet(isPresented: $showingSheet) {
+        .sheet(isPresented: $vm.sheetVisibility) {
             
             MainSheetView()
-            
+                        
         }
         
     }

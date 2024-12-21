@@ -9,7 +9,7 @@ import CoreLocation
 import Foundation
 
 protocol CoreLocationServiceable {
-    var userLocation : CLLocation { get }
+    func getUserLocation() -> CLLocation
 }
 
 public final class CoreLocationService : NSObject, CoreLocationServiceable {
@@ -37,7 +37,7 @@ public final class CoreLocationService : NSObject, CoreLocationServiceable {
         
     }
     
-    public var userLocation : CLLocation = .init()
+    private var userLocation : CLLocation = .init()
     
     private var locationManager: CLLocationManager
     
@@ -50,6 +50,10 @@ extension CoreLocationService: CLLocationManagerDelegate {
         guard let location = locations.last else { return }
         self.userLocation = location
         
+    }
+    
+    public func getUserLocation() -> CLLocation {
+        return userLocation
     }
     
 }

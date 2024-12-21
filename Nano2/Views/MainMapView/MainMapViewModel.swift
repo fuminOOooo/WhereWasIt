@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 public final class MainMapViewModel : ObservableObject {
     
@@ -17,16 +18,22 @@ public final class MainMapViewModel : ObservableObject {
     
     var coreLocationService : (any CoreLocationServiceable)
     
+    func getUserCoordinates() -> CLLocationCoordinate2D {
+        
+        return CLLocationCoordinate2D(latitude: getUserLatitude(), longitude: getUserLongitude())
+        
+    }
+    
     func getUserLongitude() -> CGFloat {
         
-        let x = coreLocationService.userLocation.coordinate.longitude
+        let x = coreLocationService.getUserLocation().coordinate.longitude
         return x
         
     }
     
     func getUserLatitude() -> CGFloat {
         
-        let y = coreLocationService.userLocation.coordinate.latitude
+        let y = coreLocationService.getUserLocation().coordinate.latitude
         return y
         
     }

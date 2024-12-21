@@ -10,13 +10,13 @@ import SwiftUI
 @main
 struct Nano2App: App {
     
-//    let persistenceController = PersistenceController.shared
+    @StateObject private var coreDataStack = CoreDataStack.shared
 
     var body: some Scene {
         
         WindowGroup {
             MainView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.managedObjectContext, coreDataStack.persistentContainer.viewContext)
         }
         
     }

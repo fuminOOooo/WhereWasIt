@@ -10,24 +10,28 @@ import SwiftUI
 struct FirstTimeOpenView: View {
     
     public init (
-        vm: FirstTimeOpenViewModel = FirstTimeOpenViewModel()
+        vm: FirstTimeOpenViewModel = FirstTimeOpenViewModel(),
+        sheetVisibility: Binding<Bool>
     ) {
         self.vm = vm
-        self.notOpenedBefore = vm.firstTimeCheck()
+        self._sheetVisibility = sheetVisibility
     }
     
     @ObservedObject var vm : FirstTimeOpenViewModel
-    @State var notOpenedBefore : Bool
+    @Binding var sheetVisibility : Bool
     
     var body: some View {
         
-        if notOpenedBefore {
+        if (vm.notOpenedBefore) {
             
             MiddlePopupView(
                 
-                shown: $notOpenedBefore,
+                shown: $vm.notOpenedBefore,
                 buttonText: StringConstant.mainViewText1,
-                buttonAction: vm.setFirstTime
+                buttonAction: {
+                    vm.setFirstTime()
+                    sheetVisibility.toggle()
+                }
                 
             ) {
                 
@@ -53,15 +57,17 @@ struct FirstTimeOpenView: View {
                 .padding(.bottom)
                 
             }
-            
+
         }
-        
+                
     }
     
 }
 
 #Preview {
     
-    FirstTimeOpenView()
+    @Previewable @State var visibility: Bool = true
+    
+    FirstTimeOpenView(sheetVisibility: $visibility)
     
 }
