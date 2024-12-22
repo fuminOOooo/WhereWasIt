@@ -11,15 +11,25 @@ struct ThreeButtonView: View {
     
     public init(
         locationsCount: Int,
+        settingsColor: Color = .primary,
         settingsButtonAction: @escaping () -> Void,
+        saveColor: Color = .primary,
         saveButtonAction: @escaping () -> Void,
+        archivesColor: Color = .primary,
         archivesButtonAction: @escaping () -> Void
     ) {
         self.locationsCount = locationsCount
         self.settingsButtonAction = settingsButtonAction
         self.saveButtonAction = saveButtonAction
         self.archivesButtonAction = archivesButtonAction
+        self.settingsColor = settingsColor
+        self.saveColor = saveColor
+        self.archivesColor = archivesColor
     }
+    
+    private let settingsColor: Color
+    private let saveColor: Color
+    private let archivesColor: Color
     
     private let locationsCount : Int
     private let settingsButtonAction : (() -> Void)
@@ -42,6 +52,7 @@ struct ThreeButtonView: View {
                 ) {
                     settingsButtonAction()
                 }
+                .tint(settingsColor)
                 
                 SystemImageButton(
                     StringConstant.pinButtonText,
@@ -49,13 +60,15 @@ struct ThreeButtonView: View {
                 ) {
                     saveButtonAction()
                 }
+                .tint(saveColor)
                 
                 SystemImageButton(
                     StringConstant.listButtonText,
-                    imageName: ImageNameConstant.listButtonImage
+                    imageName: ImageNameConstant.listCircleImage
                 ) {
                     archivesButtonAction()
                 }
+                .tint(archivesColor)
                 
             }
             .padding([.horizontal, .bottom])

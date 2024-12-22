@@ -6,16 +6,11 @@
 //
 
 import Foundation
+import CoreData
 
 public final class LocationDetailsViewModel : ObservableObject {
     
-    func checkForItemMedia(_ item: LocationItem) -> Bool {
-        
-        guard let media = item.media as? NSArray else { return false }
-        
-        return media.count == .zero ? false : true
-        
-    }
+    public init() {}
     
     func getItemName(_ item: LocationItem) -> String {
         
@@ -29,7 +24,7 @@ public final class LocationDetailsViewModel : ObservableObject {
         
         guard let timestamp = item.timestamp else { return String() }
         
-        return timestamp.formatted(date: .numeric, time: .standard)
+        return timestamp.formatted(date: .numeric, time: .omitted)
         
     }
     

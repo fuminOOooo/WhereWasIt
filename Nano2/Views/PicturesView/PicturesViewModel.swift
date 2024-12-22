@@ -9,68 +9,78 @@ import CoreData
 import PhotosUI
 import SwiftUI
 
+@MainActor
 public final class PicturesViewModel : ObservableObject {
     
-    public init() {
-        
+    public init() {}
+    
+    @Published var selection = [PhotosPickerItem]() {
+        didSet {
+            let newAttachments = selection.map { item in
+                attachmentByIdentifier[item.identifier] ?? ImageAttachment(item)
+            }
+            let newAttachmentByIdentifier = newAttachments.reduce(into: [:]) { partialResult, attachment in
+                partialResult[attachment.id] = attachment
+            }
+            attachments = newAttachments
+            attachmentByIdentifier = newAttachmentByIdentifier
+        }
     }
     
-    @Published var imagesDatas : [Data] = .init()
+    @Published var attachments = [ImageAttachment]()
     
-    func loadTransferable(from imagePicked: PhotosPickerItem, item: LocationItem, context: NSManagedObjectContext) {
-        imagePicked.loadTransferable(type: Data.self) { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let data?):
-                    self.imagesDatas.append(data)
-                    self.saveImageDataForItem(
-                        context: context,
-                        imageData: data,
-                        item: item
-                    )
-                case .success(.none):
-                    print(StringConstant.failedLoadingData)
-                case .failure(_):
-                    print(StringConstant.failedLoadingData)
+    private var attachmentByIdentifier = [String: ImageAttachment]()
+    
+}
+
+extension PicturesViewModel {
+    
+    @MainActor
+    final class ImageAttachment: ObservableObject, Identifiable {
+        
+        private let pickerItem: PhotosPickerItem
+        
+        @Published var imageStatus: Status?
+        
+        nonisolated var id: String {
+            pickerItem.identifier
+        }
+        
+        init(_ pickerItem: PhotosPickerItem) {
+            self.pickerItem = pickerItem
+        }
+        
+        enum Status {
+            case loading
+            case finished(Image)
+            case failed(Error)
+            var isFailed: Bool {
+                return switch self {
+                case .failed: true
+                default: false
                 }
             }
         }
-    }
-    
-    func getMediaData(_ item: LocationItem) {
         
-        guard let media = item.media as? NSArray else { return }
-        
-        var mediaInData : [Data] = []
-        
-        for oneMedia in media {
-            
-            guard let oneMedia = oneMedia as? String else { continue }
-            
-            mediaInData.append(oneMedia.data(using: .utf8) ?? Data())
-            
+        enum LoadingError: Error {
+            case contentTypeNotSupported
         }
         
-        imagesDatas = mediaInData
-        
-    }
-    
-    func saveImageDataForItem(context: NSManagedObjectContext, imageData: Data, item: LocationItem) {
-        
-        guard let media = item.media as? NSArray else { return }
-        
-        let stringData = String(data: imageData, encoding: .utf8)
-        
-        media.adding(stringData ?? CoreDataKeyConstant.corruptedMedia)
-        
-        do {
-            
-            try context.save()
-            
-        } catch {
-            
-            print(StringConstant.persistentStoreLoadingFailure)
-            
+        func loadImage() async {
+            guard imageStatus == nil || imageStatus?.isFailed == true else { return }
+            imageStatus = .loading
+            do {
+                if let data = try await pickerItem.loadTransferable(type: Data.self),
+                   let uiImage = UIImage(data: data) {
+                    imageStatus = .finished(
+                        Image(uiImage: uiImage)
+                    )
+                } else {
+                    throw LoadingError.contentTypeNotSupported
+                }
+            } catch {
+                imageStatus = .failed(error)
+            }
         }
         
     }

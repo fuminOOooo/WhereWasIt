@@ -11,17 +11,21 @@ struct InputAlertView: View {
     
     public init (
         placeholder: String = String(),
-        textInput: Binding<String>,
+        textInput: Binding<String> = .constant(String()),
         cancelText: String = StringConstant.cancelAlertViewText,
+        cancelRole: ButtonRole? = .cancel,
         cancelAction: (() -> Void)? = nil,
         buttonText: String = StringConstant.saveAlertViewText,
+        buttonRole: ButtonRole? = nil,
         buttonAction: @escaping () -> Void
     ) {
         self.placeholder = placeholder
         self._textInput = textInput
         self.cancelText = cancelText
+        self.cancelRole = cancelRole
         self.cancelAction = cancelAction
         self.buttonText = buttonText
+        self.buttonRole = buttonRole
         self.buttonAction = buttonAction
     }
     
@@ -29,31 +33,37 @@ struct InputAlertView: View {
     @Binding private var textInput : String
     
     private let cancelText : String
+    private let cancelRole : ButtonRole?
     private let cancelAction : (() -> Void)?
-    
+
     private let buttonText : String
+    private let buttonRole : ButtonRole?
     private let buttonAction : (() -> Void)
     
     var body: some View {
         
-        TextField(
-            placeholder,
-            text: $textInput
-        )
+        if (placeholder != String()) {
+            TextField(
+                placeholder,
+                text: $textInput
+            )
+        }
         
         Button(
-            cancelText
+            cancelText,
+            role: cancelRole
         ) {
             guard let action = cancelAction else { return }
             action()
         }
         
         Button(
-            buttonText
+            buttonText,
+            role: buttonRole
         ) {
             buttonAction()
         }
-        .disabled(textInput == String())
+        .disabled(!(placeholder == String()) && textInput == String())
         
     }
     

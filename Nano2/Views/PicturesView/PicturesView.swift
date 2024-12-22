@@ -10,109 +10,27 @@ import PhotosUI
 
 struct PicturesView: View {
     
-    @Environment(\.managedObjectContext) private var viewContext
-    
-    public init(_ availability: Bool, item: LocationItem) {
-        self.mediaAvailability = availability
+    public init(
+        item: LocationItem
+    ) {
         self.item = item
+        self.vm = .init()
     }
     
-    private let mediaAvailability : Bool
+    private var item: LocationItem
     
-    @State private var item: LocationItem
-    
-    @State private var vm: PicturesViewModel = .init()
-    
-    @State private var imagePicked : PhotosPickerItem? = nil
-    
-    @State private var showImagePicker : Bool = false
-    
-    @State private var selectedPictureOption : PicturesOption = .none
+    @ObservedObject private var vm: PicturesViewModel
     
     var body: some View {
         
-        ZStack {
+        VStack {
+                
+            Text(String(vm.attachments.count) + StringConstant.space + StringConstant.imagesGiven)
+                .bold()
             
-            Image(systemName: ImageNameConstant.squareFillImage)
-                .resizable()
-                .scaledToFit()
-                .foregroundStyle(Color.black)
-                .clipShape(
-                    RoundedRectangle(
-                        cornerRadius: NumberConstant.tighterCornerRadiusSize
-                    )
-                )
-            
-            if mediaAvailability {
-                
-                ScrollView(.horizontal) {
-                    
-                    ForEach(vm.imagesDatas, id: \.self) { data in
-                        
-                        Image(
-                            uiImage: UIImage(
-                                data: data
-                            ) ?? UIImage()
-                        )
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        
-                    }
-                    
-                }
-                .padding()
-                
-            } else {
-                
-                VStack {
-                    
-                    Button {
-                        // TODO: Navigate to a picture taking view
-                    } label: {
-                        HStack {
-                            Image(systemName: ImageNameConstant.cameraImage)
-                            Text(StringConstant.takePictures)
-                        }
-                    }
-                    .padding()
-
-                    PhotosPicker(
-                        selection: $imagePicked,
-                        matching: .images,
-                        photoLibrary: .shared()
-                    ) {
-                        HStack {
-                            Image(systemName: ImageNameConstant.photoBadgePlusImage)
-                            Text(StringConstant.pickImage)
-                        }
-                    }
-                    .photosPickerAccessoryVisibility(.visible, edges: .all)
-                    .onChange(of: imagePicked, {
-                        if let imagePicked {
-                            vm.loadTransferable(
-                                from: imagePicked,
-                                item: item,
-                                context: viewContext
-                            )
-                        }
-                    })
-
-                }
-                
-            }
+            ImagesPickerView(vm: vm)
             
         }
         
     }
-}
-
-extension PicturesView {
-    
-    enum PicturesOption: String, CaseIterable, Identifiable {
-        var id: Self { self }
-        case camera
-        case gallery
-        case none
-    }
-    
 }

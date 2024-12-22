@@ -11,40 +11,65 @@ struct ArchivesView: View {
     
     @FetchRequest(sortDescriptors: []) var locationitems: FetchedResults<LocationItem>
     
-    public init(onDismiss: (@escaping () -> Void)) {
+    public init(onDismiss: (@escaping () -> Void), emptyAction: (@escaping () -> Void)) {
         self.onDismiss = onDismiss
+        self.emptyAction = emptyAction
     }
     
     @StateObject private var vm : ArchivesViewModel = .init()
     
     private let onDismiss : (() -> Void)
+    private let emptyAction : (() -> Void)
     
     var body: some View {
         
         NavigationStack {
             
-            List {
+            if locationitems.isEmpty {
                 
-                Section {
+                VStack {
                     
-                    ForEach(locationitems) { locationitem in
+                    Text(StringConstant.startSaving)
+                        .bold()
+                    
+                    Button {
+                        emptyAction()
+                    } label: {
+                        Text(StringConstant.mainMenu)
+                    }
+                    .withFillButtonStyle()
+                    .padding()
+                    
+                }
+                .padding(.horizontal)
+                
+            } else {
+                
+                List {
+                    
+                    Section {
                         
-                        NavigationLink(vm.getItemName(locationitem)) {
+                        ForEach(locationitems) { locationitem in
                             
-                            LocationDetailsView(locationItem: locationitem)
+                            NavigationLink(vm.getItemName(locationitem)) {
+                                
+                                LocationDetailsView(locationItem: locationitem)
+                                
+                            }
                             
                         }
                         
+                    } header: {
+                        
+                        Text(StringConstant.locationsSaved)
+                        
                     }
-                
-                } header: {
-                    
-                    Text(StringConstant.locationsSaved)
                     
                 }
+                .listStyle(.insetGrouped)
                 
             }
-            .listStyle(.insetGrouped)
+            
         }
         .useCustomToolbar(
             StringConstant.listButtonText,

@@ -31,89 +31,37 @@ struct MainSheetView: View {
     
     var body: some View {
         
-        NavigationView {
+        NavigationStack {
             
             VStack {
                   
                 if expanded {
                     
-                    switch currentDetails {
-                    case .settings:
-                        SettingsView(
-                            onDismiss: shrinkDetent
-                        )
-                    case .archives:
-                        ArchivesView(
-                            onDismiss: shrinkDetent
-                        )
-                    case .none:
-                        VStack{}
-                    }
+                    details
                     
                     
                 } else {
                     
-                    ThreeButtonView(
-                        locationsCount: locationitems.count,
-                        settingsButtonAction: {
-                            expandDetent()
-                            currentDetails = .settings
-                        },
-                        saveButtonAction: {
-                            saveLocation.toggle()
-                        },
-                        archivesButtonAction: {
-                            expandDetent()
-                            currentDetails = .archives
-                        }
-                    )
+                    buttons
                     
                 }
                 
             }
             
         }
+        .mainSheetViewModified()
         .animation(.easeInOut, value: expanded)
-        .padding(.top)
         .presentationDetents(detents, selection: $currentDetent)
-        .presentationBackgroundInteraction(.enabled(upThrough: .small))
-        .presentationDragIndicator(Visibility.hidden)
         .presentationCornerRadius(NumberConstant.defaultCornerRadiusSize)
-        .interactiveDismissDisabled()
         .onChange(of: currentDetent, {
-            
-            Task {
-                
-                await MainActor.run {
-                    switch currentDetent {
-                    case .small:
-                        expanded = false
-                        detents.remove(.large)
-                    case .large:
-                        expanded = true
-                        detents.remove(.small)
-                    default: break
-                    }
-                }
-                
-            }
-            
+            onDetentChange()
         })
         .alert(
             StringConstant.saveLocationAlertViewText1,
             isPresented: $saveLocation
         ) {
             
-            InputAlertView(
-                placeholder: StringConstant.saveLocationAlertViewText2,
-                textInput: $vm.savedLocationName,
-                cancelAction: {
-                    saveLocation = false
-                },
-                buttonAction: {
-                    vm.saveCurrentLocation(context: viewContext)
-                }
-            )
+            alert
             
         }
         
@@ -121,12 +69,83 @@ struct MainSheetView: View {
     
 }
 
-extension MainSheetView {
+private extension MainSheetView {
     
     enum CurrentView {
         case settings
         case archives
         case none
+    }
+    
+    private func onDetentChange() {
+        
+        Task {
+            
+            await MainActor.run {
+                switch currentDetent {
+                case .small:
+                    expanded = false
+                    detents.remove(.large)
+                case .large:
+                    expanded = true
+                    detents.remove(.small)
+                default: break
+                }
+            }
+            
+        }
+
+    }
+    
+    @ViewBuilder private var details: some View {
+        switch currentDetails {
+        case .settings:
+            SettingsView(
+                onDismiss: shrinkDetent
+            )
+        case .archives:
+            ArchivesView(
+                onDismiss: shrinkDetent,
+                emptyAction: shrinkDetent
+            )
+        case .none:
+            VStack{}
+        }
+    }
+    
+    @ViewBuilder private var buttons: some View {
+        ThreeButtonView(
+            locationsCount: locationitems.count,
+            settingsColor: .gray,
+            settingsButtonAction: {
+                expandDetent()
+                currentDetails = .settings
+            },
+            saveColor: .red,
+            saveButtonAction: {
+                saveLocation.toggle()
+            },
+            archivesColor: .gray,
+            archivesButtonAction: {
+                expandDetent()
+                currentDetails = .archives
+            }
+        )
+    }
+    
+    @ViewBuilder private var alert: some View {
+        
+        InputAlertView(
+            placeholder: StringConstant.saveLocationAlertViewText2,
+            textInput: $vm.savedLocationName,
+            cancelAction: {
+                saveLocation = false
+            },
+            buttonAction: {
+                vm.saveCurrentLocation(context: viewContext)
+            }
+        )
+        
     }
     
 }

@@ -23,6 +23,8 @@ public final class StringConstant {
     
     static let saveLocationAlertViewText2 = "Enter location name"
     
+    static let enterLocationDescription = "Enter location description"
+    
     static let failedSave = "Failed saving to core data"
     
     static let locationsSaved = "Locations Saved"
@@ -39,6 +41,8 @@ public final class StringConstant {
     
     static let space = " "
     
+    static let savedOn = "Saved on :"
+    
     static let dash = "-"
     
     static let persistentStoreLoadingFailure = "Failed to load persistent stores"
@@ -51,7 +55,31 @@ public final class StringConstant {
     
     static let takePictures = "Take Pictures"
     
-    static let pickImage = "Pick Image"
+    static let pickImage = "Pick Images"
+    
+    static let noLibrary = "The photos picker lacks a photo library."
+    
+    static let imagesGiven = "images given."
+    
+    static let details = "Details"
+    
+    static let media = "Media"
+    
+    static let description = "Description"
+    
+    static let saveDescription = "Save Description"
+    
+    static let latitudeDescription = "Latitude :"
+    
+    static let longitudeDescription = "Longitude :"
+    
+    static let delete = "Delete"
+    
+    static let questionMark = "?"
+    
+    static let startSaving = "Start saving locations from the main menu."
+    
+    static let mainMenu = "Back to Main Menu"
     
 }
 
@@ -71,6 +99,8 @@ public final class CoreDataKeyConstant {
     
     static let locationItem = "LocationItem"
     
+    static let textDescription = "textDescription"
+    
 }
 
 public final class ImageNameConstant {
@@ -79,7 +109,9 @@ public final class ImageNameConstant {
     
     static let pinButtonImage = "mappin.and.ellipse.circle.fill"
     
-    static let listButtonImage = "list.bullet.circle.fill"
+    static let listCircleImage = "list.bullet.circle.fill"
+    
+    static let listImage = "list.bullet"
     
     static let xmarkImage = "xmark"
     
@@ -90,6 +122,10 @@ public final class ImageNameConstant {
     static let cameraImage = "camera"
     
     static let plusCircleImage = "plus.circle.fill"
+    
+    static let exclamationTriangleImage = "exclamationmark.triangle.fill"
+    
+    static let noteImage = "note.text"
     
 }
 
@@ -106,5 +142,7 @@ public final class NumberConstant {
     static let defaultDimmedBackgroundOpacity = 0.5
     
     static let defaultPeekDetentFractionValue = 0.3
+    
+    static let smallerImageHeightMultiplier = 0.8
     
 }

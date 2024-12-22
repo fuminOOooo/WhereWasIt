@@ -19,6 +19,11 @@
 		155830BF2A1EA4200065D51B /* LegacyLandmarkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830BE2A1EA4200065D51B /* LegacyLandmarkConstants.swift */; };
 		155830C32A1F03460065D51B /* LegacyConfirmationModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830C22A1F03460065D51B /* LegacyConfirmationModal.swift */; };
 		155830C52A1F044B0065D51B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155830C42A1F044B0065D51B /* CustomButton.swift */; };
+		155946CD2D182A0700600F8A /* PhotosPickerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155946CC2D182A0300600F8A /* PhotosPickerItem.swift */; };
+		155946D02D182E7400600F8A /* ImagesPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155946CF2D182E6900600F8A /* ImagesPickerView.swift */; };
+		155946D42D183AB100600F8A /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155946D32D183AAF00600F8A /* CGFloat.swift */; };
+		155946D62D183D9700600F8A /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155946D52D183D9300600F8A /* ImageDetailView.swift */; };
+		155946D82D186AAC00600F8A /* NavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155946D72D186AAA00600F8A /* NavigationStack.swift */; };
 		15AF23742B149CFE0075F7D8 /* SF-Pro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15AF23722B149CFE0075F7D8 /* SF-Pro-Italic.ttf */; };
 		15AF23752B149CFE0075F7D8 /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15AF23732B149CFE0075F7D8 /* SF-Pro.ttf */; };
 		15C4DE2C2D15B61000D2009A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C4DE2B2D15B60B00D2009A /* CoreDataStack.swift */; };
@@ -65,6 +70,11 @@
 		155830BE2A1EA4200065D51B /* LegacyLandmarkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyLandmarkConstants.swift; sourceTree = "<group>"; };
 		155830C22A1F03460065D51B /* LegacyConfirmationModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyConfirmationModal.swift; sourceTree = "<group>"; };
 		155830C42A1F044B0065D51B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		155946CC2D182A0300600F8A /* PhotosPickerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPickerItem.swift; sourceTree = "<group>"; };
+		155946CF2D182E6900600F8A /* ImagesPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesPickerView.swift; sourceTree = "<group>"; };
+		155946D32D183AAF00600F8A /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
+		155946D52D183D9300600F8A /* ImageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
+		155946D72D186AAA00600F8A /* NavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStack.swift; sourceTree = "<group>"; };
 		15AF23722B149CFE0075F7D8 /* SF-Pro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Italic.ttf"; sourceTree = "<group>"; };
 		15AF23732B149CFE0075F7D8 /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
 		15C4DE2B2D15B60B00D2009A /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -217,6 +227,8 @@
 		A1086C4A2D150F5A00C90A95 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				155946D52D183D9300600F8A /* ImageDetailView.swift */,
+				155946CF2D182E6900600F8A /* ImagesPickerView.swift */,
 				1508DC652A1FC05200673445 /* MiddlePopupView.swift */,
 				15DC7D7A2D16FA330018D218 /* InputAlertView.swift */,
 				15DC7D9F2D1738440018D218 /* ThreeButtonView.swift */,
@@ -256,6 +268,9 @@
 		A1086C5C2D15285900C90A95 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				155946D72D186AAA00600F8A /* NavigationStack.swift */,
+				155946D32D183AAF00600F8A /* CGFloat.swift */,
+				155946CC2D182A0300600F8A /* PhotosPickerItem.swift */,
 				15DC7D952D172D550018D218 /* PresentationDetent.swift */,
 				15DC7D7C2D16FFC80018D218 /* View.swift */,
 			);
@@ -404,11 +419,15 @@
 				155830BA2A1E9A0D0065D51B /* LegacyLocationManager.swift in Sources */,
 				155830BD2A1E9D320065D51B /* LegacyMapView.swift in Sources */,
 				15DC7D7B2D16FA330018D218 /* InputAlertView.swift in Sources */,
+				155946D62D183D9700600F8A /* ImageDetailView.swift in Sources */,
+				155946D42D183AB100600F8A /* CGFloat.swift in Sources */,
 				A1086C592D151FBF00C90A95 /* MainMapViewModel.swift in Sources */,
 				A1086C632D15545600C90A95 /* MainSheetView.swift in Sources */,
 				15DC7D962D172D550018D218 /* PresentationDetent.swift in Sources */,
 				A1086C5B2D15237500C90A95 /* CoreLocationService.swift in Sources */,
 				15DC7D7D2D16FFCA0018D218 /* View.swift in Sources */,
+				155946D02D182E7400600F8A /* ImagesPickerView.swift in Sources */,
+				155946CD2D182A0700600F8A /* PhotosPickerItem.swift in Sources */,
 				15DC7DAC2D177D7B0018D218 /* PicturesView.swift in Sources */,
 				1508DC662A1FC05200673445 /* MiddlePopupView.swift in Sources */,
 				15DC7DA22D174B830018D218 /* SettingsViewModel.swift in Sources */,
@@ -417,6 +436,7 @@
 				A1F4C6232D13FC5B00FA09B2 /* CustomColor.swift in Sources */,
 				A1F4C62D2D140F2E00FA09B2 /* UserDefaultsService.swift in Sources */,
 				15DC7DA92D1772750018D218 /* LocationDetailsViewModel.swift in Sources */,
+				155946D82D186AAC00600F8A /* NavigationStack.swift in Sources */,
 				A1086C522D15129F00C90A95 /* MainViewModel.swift in Sources */,
 				1508DC682A1FCB8300673445 /* LegacyInfoModal.swift in Sources */,
 				15DC7DA42D17685B0018D218 /* ArchivesViewModel.swift in Sources */,
