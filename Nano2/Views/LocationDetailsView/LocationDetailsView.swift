@@ -27,49 +27,10 @@ struct LocationDetailsView: View {
             Text(vm.getItemTimestamp(locationItem))
                 .padding(.bottom)
             
-            ZStack {
-                
-                Image(systemName: ImageNameConstant.squareFillImage)
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundStyle(Color.black)
-                    .clipShape(
-                        RoundedRectangle(
-                            cornerRadius: NumberConstant.tighterCornerRadiusSize
-                        )
-                    )
-                
-                if vm.checkForItemMedia(locationItem) {
-                    
-                    
-                    
-                } else {
-                    
-                    VStack {
-                        
-                        Text(StringConstant.noPicturesTaken)
-                            .foregroundStyle(Color.primary)
-                            .padding()
-                        
-                        Button {
-                            
-                        } label: {
-                            
-                            HStack {
-                                
-                                Image(systemName: ImageNameConstant.cameraImage)
-                                
-                                Text(StringConstant.takePictures)
-                                
-                            }
-                            
-                        }
-                        
-                    }
-                    
-                }
-                
-            }
+            PicturesView(
+                vm.checkForItemMedia(locationItem),
+                item: locationItem
+            )
             
         }
         .padding(.horizontal)

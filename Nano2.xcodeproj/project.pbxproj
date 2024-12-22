@@ -32,6 +32,8 @@
 		15DC7DA42D17685B0018D218 /* ArchivesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DC7DA32D1768570018D218 /* ArchivesViewModel.swift */; };
 		15DC7DA72D1771B00018D218 /* LocationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DC7DA62D1771AC0018D218 /* LocationDetailsView.swift */; };
 		15DC7DA92D1772750018D218 /* LocationDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DC7DA82D1772700018D218 /* LocationDetailsViewModel.swift */; };
+		15DC7DAC2D177D7B0018D218 /* PicturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DC7DAB2D177D7B0018D218 /* PicturesView.swift */; };
+		15DC7DAE2D1783880018D218 /* PicturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DC7DAD2D1783850018D218 /* PicturesViewModel.swift */; };
 		A1086C4D2D15102800C90A95 /* FirstTimeOpenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C4C2D15102800C90A95 /* FirstTimeOpenView.swift */; };
 		A1086C522D15129F00C90A95 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C512D15129C00C90A95 /* MainViewModel.swift */; };
 		A1086C572D151E8D00C90A95 /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C562D151E8D00C90A95 /* MainMapView.swift */; };
@@ -76,6 +78,8 @@
 		15DC7DA32D1768570018D218 /* ArchivesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivesViewModel.swift; sourceTree = "<group>"; };
 		15DC7DA62D1771AC0018D218 /* LocationDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsView.swift; sourceTree = "<group>"; };
 		15DC7DA82D1772700018D218 /* LocationDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewModel.swift; sourceTree = "<group>"; };
+		15DC7DAB2D177D7B0018D218 /* PicturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesView.swift; sourceTree = "<group>"; };
+		15DC7DAD2D1783850018D218 /* PicturesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesViewModel.swift; sourceTree = "<group>"; };
 		A1086C4C2D15102800C90A95 /* FirstTimeOpenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeOpenView.swift; sourceTree = "<group>"; };
 		A1086C512D15129C00C90A95 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		A1086C562D151E8D00C90A95 /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 		155830C12A1EA4F60065D51B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				15DC7DAA2D177D5C0018D218 /* PicturesView */,
 				15DC7DA52D1771A10018D218 /* LocationDetailsView */,
 				15DC7D9B2D172D7C0018D218 /* SettingsView */,
 				15DC7D982D172D730018D218 /* ArchivesView */,
@@ -194,10 +199,19 @@
 		15DC7DA52D1771A10018D218 /* LocationDetailsView */ = {
 			isa = PBXGroup;
 			children = (
-				15DC7DA82D1772700018D218 /* LocationDetailsViewModel.swift */,
 				15DC7DA62D1771AC0018D218 /* LocationDetailsView.swift */,
+				15DC7DA82D1772700018D218 /* LocationDetailsViewModel.swift */,
 			);
 			path = LocationDetailsView;
+			sourceTree = "<group>";
+		};
+		15DC7DAA2D177D5C0018D218 /* PicturesView */ = {
+			isa = PBXGroup;
+			children = (
+				15DC7DAD2D1783850018D218 /* PicturesViewModel.swift */,
+				15DC7DAB2D177D7B0018D218 /* PicturesView.swift */,
+			);
+			path = PicturesView;
 			sourceTree = "<group>";
 		};
 		A1086C4A2D150F5A00C90A95 /* CustomView */ = {
@@ -395,6 +409,7 @@
 				15DC7D962D172D550018D218 /* PresentationDetent.swift in Sources */,
 				A1086C5B2D15237500C90A95 /* CoreLocationService.swift in Sources */,
 				15DC7D7D2D16FFCA0018D218 /* View.swift in Sources */,
+				15DC7DAC2D177D7B0018D218 /* PicturesView.swift in Sources */,
 				1508DC662A1FC05200673445 /* MiddlePopupView.swift in Sources */,
 				15DC7DA22D174B830018D218 /* SettingsViewModel.swift in Sources */,
 				15DC7D9C2D172D7C0018D218 /* SettingsView.swift in Sources */,
@@ -405,6 +420,7 @@
 				A1086C522D15129F00C90A95 /* MainViewModel.swift in Sources */,
 				1508DC682A1FCB8300673445 /* LegacyInfoModal.swift in Sources */,
 				15DC7DA42D17685B0018D218 /* ArchivesViewModel.swift in Sources */,
+				15DC7DAE2D1783880018D218 /* PicturesViewModel.swift in Sources */,
 				A1F4C6282D13FDF000FA09B2 /* FirstTimeOpenViewModel.swift in Sources */,
 				15DC7D992D172D730018D218 /* ArchivesView.swift in Sources */,
 				15DC7DA72D1771B00018D218 /* LocationDetailsView.swift in Sources */,

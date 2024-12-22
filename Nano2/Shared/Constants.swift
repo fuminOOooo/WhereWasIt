@@ -45,9 +45,13 @@ public final class StringConstant {
     
     static let userDefaultsLoadingFailure = "Failed to load from user defaults"
     
-    static let noPicturesTaken = "No pictures taken here."
+    static let failedLoadingData = "Failed to load data"
+    
+    static let noPicturesTaken = "No pictures given here."
     
     static let takePictures = "Take Pictures"
+    
+    static let pickImage = "Pick Image"
     
 }
 
@@ -60,6 +64,8 @@ public final class UserDefaultsKeyConstant {
 }
 
 public final class CoreDataKeyConstant {
+    
+    static let corruptedMedia = "CORRUPTEDMEDIA"
     
     static let dataModelName = "Nano2"
     
