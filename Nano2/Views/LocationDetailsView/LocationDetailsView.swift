@@ -17,7 +17,7 @@ struct LocationDetailsView: View {
     
     @State private var locationDescription : String
     @State private var locationName : String
-    @State private var saveButtonVisible : Bool = false
+    @FocusState private var saveButtonVisible : Bool
     @State private var deleting : Bool = false
     
     private var locationItem : LocationItem
@@ -41,6 +41,7 @@ struct LocationDetailsView: View {
             text: $locationDescription,
             axis: .vertical
         )
+        .focused($saveButtonVisible)
         .lineLimit(nil)
         .fixedSize(horizontal: false, vertical: true)
         

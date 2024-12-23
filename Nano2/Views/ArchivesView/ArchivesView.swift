@@ -22,7 +22,6 @@ struct ArchivesView: View {
     }
     
     @State private var newItemAdded : Bool
-    @State private var path : NavigationPath = .init()
     @StateObject private var vm : ArchivesViewModel = .init()
     
     private let onDismiss : (() -> Void)
@@ -57,22 +56,22 @@ struct ArchivesView: View {
                     
                     Section {
                         
-                        ForEach(locationItems) { locationItem in
+                        ForEach(locationItems.reversed()) { locationItem in
                             
                             NavigationLink(
-                                
                                 vm.getItemName(locationItem)
-                                
                             ) {
-                                
                                 getItemDetailView(locationItem)
-                                
                             }
                             .onAppear {
                                 
                                 if !checkIfLast(id: locationItem.id) { return }
                                 
+                                print("is last")
+                                
                                 if !newItemAdded { return }
+                                
+                                print("did add new item")
                                 
                                 router.navigateTo(
                                     route: .itemDetail(
@@ -80,7 +79,11 @@ struct ArchivesView: View {
                                     )
                                 )
                                 
+                                print("tried to navigate")
+                                
                                 newItemAdded = false
+                                
+                                print("toggle newItemAdded")
                                 
                             }
                             
@@ -98,6 +101,12 @@ struct ArchivesView: View {
             }
             
         }
+        .navigationDestination(for: ItemRouter.Route.self) { route in
+            switch route {
+                case .itemDetail(let item):
+                LocationDetailsView(locationItem: item)
+            }
+        }
         .useCustomToolbar(
             StringConstant.listButtonText,
             onDismiss: {
@@ -111,7 +120,9 @@ struct ArchivesView: View {
 private extension ArchivesView {
     
     private func getItemDetailView(_ item: LocationItem) -> some View {
+        
         return LocationDetailsView(locationItem: item)
+        
     }
     
     private func checkIfLast(id: ObjectIdentifier) -> Bool {
@@ -120,17 +131,15 @@ private extension ArchivesView {
         
     }
     
-    private enum ItemRoute : Hashable {
-        
-        case itemDetail(item: LocationItem)
-        
-    }
-    
     private class ItemRouter : ObservableObject {
+        
+        enum Route: Hashable {
+            case itemDetail(item: LocationItem)
+        }
         
         public var navigationPath = NavigationPath()
 
-        func navigateTo(route: ItemRoute) {
+        func navigateTo(route: Route) {
             
             navigationPath.append(route)
             

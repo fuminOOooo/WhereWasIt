@@ -26,7 +26,7 @@ struct ImagesPickerView: View {
             }
             .scrollDisabled($vm.attachments.isEmpty)
             
-            newImage()
+            imagePicker()
             
         }
         
@@ -36,8 +36,7 @@ struct ImagesPickerView: View {
 
 private extension ImagesPickerView {
     
-    @ViewBuilder
-    private func allImages() -> some View {
+    @ViewBuilder private func allImages() -> some View {
         
         ForEach(vm.attachments) { attachment in
             
@@ -79,7 +78,7 @@ private extension ImagesPickerView {
         
     }
     
-    @ViewBuilder private func newImage() -> some View {
+    @ViewBuilder private func imagePicker() -> some View {
         
         PhotosPicker(
             selection: $vm.selection,
