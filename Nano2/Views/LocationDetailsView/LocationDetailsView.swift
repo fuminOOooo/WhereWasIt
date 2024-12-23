@@ -22,6 +22,81 @@ struct LocationDetailsView: View {
     
     private var locationItem : LocationItem
     
+    @ViewBuilder private func identifiers() -> some View {
+            
+        Text(StringConstant.savedOn + StringConstant.space + vm.getItemTimestamp(locationItem))
+        
+        Text(locationName)
+            .font(.largeTitle)
+            .bold()
+            .lineLimit(nil)
+            .fixedSize(horizontal: false, vertical: true)
+        
+    }
+    
+    @ViewBuilder private func description() -> some View {
+        
+        TextField(
+            StringConstant.enterLocationDescription,
+            text: $locationDescription,
+            axis: .vertical
+        )
+        .lineLimit(nil)
+        .fixedSize(horizontal: false, vertical: true)
+        
+        if saveButtonVisible {
+            Button {
+                saveButtonVisible = false
+                saveCurrentLocationDescription()
+            } label: {
+                HStack {
+                    Image(systemName: ImageNameConstant.noteImage)
+                    Text(StringConstant.saveChanges)
+                }
+                .bold()
+            }
+            .withFillButtonStyle()
+        }
+        
+    }
+    
+    @ViewBuilder private func details() -> some View {
+        
+        Text(StringConstant.latitudeDescription + StringConstant.space + String(locationItem.latitude))
+        
+        Text(StringConstant.longitudeDescription + StringConstant.space + String(locationItem.longitude))
+        
+    }
+    
+    @ViewBuilder private func others() -> some View {
+        
+        Button(role: .destructive) {
+            deleting = true
+        } label: {
+            HStack {
+                Image(systemName: ImageNameConstant.trashFillImage)
+                Text(StringConstant.delete + StringConstant.space + (locationItem.name ?? String()))
+            }
+        }
+        
+    }
+    
+    @ViewBuilder private func alert() -> some View {
+        
+        InputAlertView(
+            cancelAction: {
+                deleting = false
+            },
+            buttonText: StringConstant.delete,
+            buttonRole: .destructive,
+            buttonAction: {
+                deleteItem()
+                dismiss()
+            }
+        )
+        
+    }
+    
     public init(
         locationItem: LocationItem
     ) {
@@ -36,17 +111,7 @@ struct LocationDetailsView: View {
             
             List {
                 
-                Section(StringConstant.identifiers) {
-                    
-                    Text(StringConstant.savedOn + StringConstant.space + vm.getItemTimestamp(locationItem))
-                            
-                    Text(locationName)
-                            .font(.largeTitle)
-                            .bold()
-                            .lineLimit(nil)
-                            .fixedSize(horizontal: false, vertical: true)
-                    
-                }
+                Section(StringConstant.identifiers, content: identifiers)
                 
                 Section(StringConstant.media) {
                     
@@ -61,18 +126,7 @@ struct LocationDetailsView: View {
                 
                 Section(StringConstant.details, content: details)
                 
-                Section(StringConstant.others) {
-                    
-                    Button(role: .destructive) {
-                        deleting = true
-                    } label: {
-                        HStack {
-                            Image(systemName: ImageNameConstant.trashFillImage)
-                            Text(StringConstant.delete + StringConstant.space + (locationItem.name ?? String()))
-                        }
-                    }
-                    
-                }
+                Section(StringConstant.others, content: others)
                 
             }
             .navigationTitle($locationName)
@@ -128,56 +182,6 @@ private extension LocationDetailsView {
         viewContext.delete(locationItem)
         
         saveChanges()
-        
-    }
-    
-    @ViewBuilder private func description() -> some View {
-        
-        TextField(
-            StringConstant.enterLocationDescription,
-            text: $locationDescription,
-            axis: .vertical
-        )
-        .lineLimit(nil)
-        .fixedSize(horizontal: false, vertical: true)
-        
-        if saveButtonVisible {
-            Button {
-                saveButtonVisible = false
-                saveCurrentLocationDescription()
-            } label: {
-                HStack {
-                    Image(systemName: ImageNameConstant.noteImage)
-                    Text(StringConstant.saveChanges)
-                }
-                .bold()
-            }
-            .withFillButtonStyle()
-        }
-        
-    }
-    
-    @ViewBuilder private func details() -> some View {
-        
-        Text(StringConstant.latitudeDescription + StringConstant.space + String(locationItem.latitude))
-        
-        Text(StringConstant.longitudeDescription + StringConstant.space + String(locationItem.longitude))
-        
-    }
-    
-    @ViewBuilder private func alert() -> some View {
-        
-        InputAlertView(
-            cancelAction: {
-                deleting = false
-            },
-            buttonText: StringConstant.delete,
-            buttonRole: .destructive,
-            buttonAction: {
-                deleteItem()
-                dismiss()
-            }
-        )
         
     }
     
