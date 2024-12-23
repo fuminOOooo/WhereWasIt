@@ -10,6 +10,8 @@ import PhotosUI
 
 struct PicturesView: View {
     
+    @Environment(\.managedObjectContext) private var viewContext
+    
     public init(
         item: LocationItem
     ) {

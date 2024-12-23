@@ -24,7 +24,7 @@ public final class LocationDetailsViewModel : ObservableObject {
         
         guard let timestamp = item.timestamp else { return String() }
         
-        return timestamp.formatted(date: .numeric, time: .omitted)
+        return timestamp.formatted(date: .numeric, time: .standard)
         
     }
     

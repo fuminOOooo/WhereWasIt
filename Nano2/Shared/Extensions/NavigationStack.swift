@@ -9,13 +9,15 @@ import SwiftUI
 
 extension NavigationStack {
     
-    func mainSheetViewModified() -> some View {
+    func mainSheetViewModified<V:Equatable>(value: V) -> some View {
         
         self
+            .animation(.easeInOut, value: value)
             .padding(.top)
             .interactiveDismissDisabled()
             .presentationBackgroundInteraction(.enabled(upThrough: .small))
             .presentationDragIndicator(Visibility.hidden)
+            .presentationCornerRadius(NumberConstant.defaultCornerRadiusSize)
         
     }
     

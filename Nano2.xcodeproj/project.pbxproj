@@ -46,6 +46,7 @@
 		A1086C5B2D15237500C90A95 /* CoreLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C5A2D15237000C90A95 /* CoreLocationService.swift */; };
 		A1086C632D15545600C90A95 /* MainSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C622D15545300C90A95 /* MainSheetView.swift */; };
 		A1086C652D15545C00C90A95 /* MainSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1086C642D15545900C90A95 /* MainSheetViewModel.swift */; };
+		A1A8FCF22D190F7B009005B4 /* ContainedLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A8FCF12D190F7B009005B4 /* ContainedLoaderView.swift */; };
 		A1F4C61F2D13F56000FA09B2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C61E2D13F55D00FA09B2 /* Constants.swift */; };
 		A1F4C6212D13F57100FA09B2 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C6202D13F56C00FA09B2 /* CustomFont.swift */; };
 		A1F4C6232D13FC5B00FA09B2 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C6222D13FC5800FA09B2 /* CustomColor.swift */; };
@@ -97,6 +98,7 @@
 		A1086C5A2D15237000C90A95 /* CoreLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationService.swift; sourceTree = "<group>"; };
 		A1086C622D15545300C90A95 /* MainSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSheetView.swift; sourceTree = "<group>"; };
 		A1086C642D15545900C90A95 /* MainSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSheetViewModel.swift; sourceTree = "<group>"; };
+		A1A8FCF12D190F7B009005B4 /* ContainedLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainedLoaderView.swift; sourceTree = "<group>"; };
 		A1F4C61E2D13F55D00FA09B2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A1F4C6202D13F56C00FA09B2 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		A1F4C6222D13FC5800FA09B2 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
@@ -181,13 +183,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		15C4DE2A2D15B55000D2009A /* LocationItem */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LocationItem;
-			sourceTree = "<group>";
-		};
 		15DC7D982D172D730018D218 /* ArchivesView */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +227,7 @@
 				1508DC652A1FC05200673445 /* MiddlePopupView.swift */,
 				15DC7D7A2D16FA330018D218 /* InputAlertView.swift */,
 				15DC7D9F2D1738440018D218 /* ThreeButtonView.swift */,
+				A1A8FCF12D190F7B009005B4 /* ContainedLoaderView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -281,7 +277,6 @@
 			isa = PBXGroup;
 			children = (
 				15C4DE2B2D15B60B00D2009A /* CoreDataStack.swift */,
-				15C4DE2A2D15B55000D2009A /* LocationItem */,
 				155830A82A1E99930065D51B /* Nano2.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -418,6 +413,7 @@
 				A1F4C6212D13F57100FA09B2 /* CustomFont.swift in Sources */,
 				155830BA2A1E9A0D0065D51B /* LegacyLocationManager.swift in Sources */,
 				155830BD2A1E9D320065D51B /* LegacyMapView.swift in Sources */,
+				A1A8FCF22D190F7B009005B4 /* ContainedLoaderView.swift in Sources */,
 				15DC7D7B2D16FA330018D218 /* InputAlertView.swift in Sources */,
 				155946D62D183D9700600F8A /* ImageDetailView.swift in Sources */,
 				155946D42D183AB100600F8A /* CGFloat.swift in Sources */,

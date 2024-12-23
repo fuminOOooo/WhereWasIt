@@ -61,13 +61,17 @@ public final class StringConstant {
     
     static let imagesGiven = "images given."
     
+    static let identifiers = "Identifiers"
+    
     static let details = "Details"
     
     static let media = "Media"
     
+    static let others = "Others"
+    
     static let description = "Description"
     
-    static let saveDescription = "Save Description"
+    static let saveChanges = "Save Changes"
     
     static let latitudeDescription = "Latitude :"
     
@@ -80,6 +84,10 @@ public final class StringConstant {
     static let startSaving = "Start saving locations from the main menu."
     
     static let mainMenu = "Back to Main Menu"
+    
+    static let loading = "Loading.."
+    
+    static let untitled = "Untitled Location"
     
 }
 
@@ -126,6 +134,10 @@ public final class ImageNameConstant {
     static let exclamationTriangleImage = "exclamationmark.triangle.fill"
     
     static let noteImage = "note.text"
+    
+    static let pencilLineImage = "pencil.line"
+    
+    static let trashFillImage = "trash.fill"
     
 }
 

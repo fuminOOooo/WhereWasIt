@@ -19,24 +19,15 @@ public final class MainSheetViewModel: ObservableObject {
     
     var coreLocationService : (any CoreLocationServiceable)
     
-    @Published var savedLocationName : String = .init()
+    func getUserLongitude() -> Double {
+        
+        return coreLocationService.getUserLocation().coordinate.longitude
+        
+    }
     
-    func saveCurrentLocation(context : NSManagedObjectContext) {
+    func getUserLatitude() -> Double {
         
-        let currentLocation : LocationItem = LocationItem(context: context)
-        currentLocation.locationId = UUID()
-        currentLocation.timestamp = Date()
-        currentLocation.longitude = coreLocationService.getUserLocation().coordinate.longitude
-        currentLocation.latitude = coreLocationService.getUserLocation().coordinate.latitude
-        currentLocation.name = savedLocationName
-        currentLocation.media = NSArray()
-        
-        do {
-            try context.save()
-            savedLocationName = String()
-        } catch {
-            print(StringConstant.failedSave)
-        }
+        return coreLocationService.getUserLocation().coordinate.latitude
         
     }
     

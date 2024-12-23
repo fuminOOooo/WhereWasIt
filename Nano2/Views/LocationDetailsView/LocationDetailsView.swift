@@ -16,6 +16,8 @@ struct LocationDetailsView: View {
     @ObservedObject private var vm : LocationDetailsViewModel = .init()
     
     @State private var locationDescription : String
+    @State private var locationName : String
+    @State private var saveButtonVisible : Bool = false
     @State private var deleting : Bool = false
     
     private var locationItem : LocationItem
@@ -24,50 +26,68 @@ struct LocationDetailsView: View {
         locationItem: LocationItem
     ) {
         self.locationItem = locationItem
-        if let description = locationItem.textDescription {
-            locationDescription = description
-        } else {
-            locationDescription = String()
-        }
+        locationDescription = locationItem.textDescription ?? String()
+        locationName = locationItem.name ?? String()
     }
     
     var body: some View {
         
-        
         VStack {
-            
-            Text(vm.getItemName(locationItem))
-                .font(.largeTitle)
-                .bold()
-            
-            Text(StringConstant.savedOn + StringConstant.space + vm.getItemTimestamp(locationItem))
-                .padding(.bottom)
             
             List {
                 
-                Section(StringConstant.media, content: pictures)
+                Section(StringConstant.identifiers) {
+                    
+                    Text(StringConstant.savedOn + StringConstant.space + vm.getItemTimestamp(locationItem))
+                            
+                    Text(locationName)
+                            .font(.largeTitle)
+                            .bold()
+                            .lineLimit(nil)
+                            .fixedSize(horizontal: false, vertical: true)
+                    
+                }
+                
+                Section(StringConstant.media) {
+                    
+                    PicturesView(
+                        item: locationItem
+                    )
+                    .padding(.vertical)
+                    
+                }
                 
                 Section(StringConstant.description, content: description)
                 
                 Section(StringConstant.details, content: details)
                 
-                Button (
-                    StringConstant.delete + StringConstant.space + (locationItem.name ?? String()),
-                    role: .destructive
-                ) {
-                    deleting = true
+                Section(StringConstant.others) {
+                    
+                    Button(role: .destructive) {
+                        deleting = true
+                    } label: {
+                        HStack {
+                            Image(systemName: ImageNameConstant.trashFillImage)
+                            Text(StringConstant.delete + StringConstant.space + (locationItem.name ?? String()))
+                        }
+                    }
+                    
                 }
                 
+            }
+            .navigationTitle($locationName)
+            .navigationBarTitleDisplayMode(.inline)
+            .onChange(of: locationDescription) {
+                saveButtonVisible = true
             }
             .alert(
                 StringConstant.delete +
                 StringConstant.space +
                 (locationItem.name ?? String()) +
                 StringConstant.questionMark,
-                isPresented: $deleting
-            ) {
-                alert()
-            }
+                isPresented: $deleting,
+                actions: alert
+            )
             
         }
         
@@ -95,6 +115,14 @@ private extension LocationDetailsView {
         
     }
     
+    private func saveCurrentLocationName() {
+        
+        locationItem.name = locationName
+        
+        saveChanges()
+        
+    }
+    
     private func deleteItem() {
         
         viewContext.delete(locationItem)
@@ -103,35 +131,29 @@ private extension LocationDetailsView {
         
     }
     
-    @ViewBuilder private func pictures() -> some View {
-        
-        PicturesView(
-            item: locationItem
-        )
-        .padding(.vertical)
-        
-    }
-    
     @ViewBuilder private func description() -> some View {
         
         TextField(
             StringConstant.enterLocationDescription,
-            text: $locationDescription
+            text: $locationDescription,
+            axis: .vertical
         )
-        .padding(.top)
+        .lineLimit(nil)
+        .fixedSize(horizontal: false, vertical: true)
         
-        Button {
-            saveCurrentLocationDescription()
-        } label: {
-            HStack {
-                Spacer()
-                Image(systemName: ImageNameConstant.noteImage)
-                Text(StringConstant.saveDescription)
+        if saveButtonVisible {
+            Button {
+                saveButtonVisible = false
+                saveCurrentLocationDescription()
+            } label: {
+                HStack {
+                    Image(systemName: ImageNameConstant.noteImage)
+                    Text(StringConstant.saveChanges)
+                }
+                .bold()
             }
-            .bold(locationDescription != locationItem.textDescription)
+            .withFillButtonStyle()
         }
-        .padding(.vertical)
-        .disabled(locationDescription == locationItem.textDescription)
         
     }
     

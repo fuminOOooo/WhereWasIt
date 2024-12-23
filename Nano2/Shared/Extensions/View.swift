@@ -9,6 +9,18 @@ import SwiftUI
 
 extension View {
     
-    
+    @ViewBuilder func conditionalPadding(
+        _ edge: Edge.Set,
+        on: Binding<Bool>
+    ) -> some View {
+        
+        if on.wrappedValue {
+            self
+                .padding(edge)
+        } else {
+            self
+        }
+        
+    }
     
 }

@@ -17,9 +17,7 @@ struct SettingsView: View {
     
     var body: some View {
         
-        VStack {
-            
-        }
+        EmptyView()
         .useCustomToolbar(
             StringConstant.settingsButtonText,
             onDismiss: {

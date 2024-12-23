@@ -15,8 +15,29 @@ struct ImagesPickerView: View {
     
     @ObservedObject private var vm : PicturesViewModel
     
+    var body: some View {
+        
+        VStack {
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(alignment: .center) {
+                    allImages()
+                }
+            }
+            .scrollDisabled($vm.attachments.isEmpty)
+            
+            newImage()
+            
+        }
+        
+    }
+    
+}
+
+private extension ImagesPickerView {
+    
     @ViewBuilder
-    private var allImages: some View {
+    private func allImages() -> some View {
         
         ForEach(vm.attachments) { attachment in
             
@@ -33,48 +54,32 @@ struct ImagesPickerView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(height: UIScreen.main.bounds.width * NumberConstant.smallerImageHeightMultiplier)
+                            .clipShape(
+                                RoundedRectangle(
+                                    cornerRadius: NumberConstant.tighterCornerRadiusSize
+                                )
+                            )
                     }
                     
                 case .failed:
                     Image(systemName: ImageNameConstant.exclamationTriangleImage)
                     
                 default:
-                    
-                    ZStack {
-                        
-                        Image(systemName: ImageNameConstant.squareFillImage)
-                            .resizable()
-                            .scaledToFit()
-                            .foregroundStyle(Color.primary)
-                            .clipShape(
-                                RoundedRectangle(
-                                    cornerRadius: NumberConstant.tighterCornerRadiusSize
-                                )
-                            )
-                        
-                        ProgressView()
-                        
-                    }
+                    ContainedLoaderView()
                     
                 }
-                
+
             }
             .padding()
             .task {
                 await attachment.loadImage()
             }
-            .clipShape(
-                RoundedRectangle(
-                    cornerRadius: NumberConstant.tighterCornerRadiusSize
-                )
-            )
             
         }
         
     }
     
-    @ViewBuilder
-    private var newImage: some View {
+    @ViewBuilder private func newImage() -> some View {
         
         PhotosPicker(
             selection: $vm.selection,
@@ -88,37 +93,9 @@ struct ImagesPickerView: View {
                 Text(StringConstant.pickImage)
             }
         }
-        .photosPickerAccessoryVisibility(.visible, edges: .all)
-        .frame(maxWidth: .infinity)
-        .padding(.top)
         .withFillButtonStyle()
-        
-    }
-    
-    
-    var body: some View {
-        
-        VStack {
-            
-            if (!vm.attachments.isEmpty) {
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    
-                    HStack(alignment: .center) {
-                        
-                        allImages
-                        
-                    }
-                    .frame(maxWidth: .infinity)
-                    
-                }
-                .scrollDisabled($vm.attachments.isEmpty)
-                
-            }
-            
-            newImage
-            
-        }
+        .photosPickerAccessoryVisibility(.visible, edges: .all)
+        .padding(.top)
         
     }
     

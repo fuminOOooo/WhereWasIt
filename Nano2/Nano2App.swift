@@ -16,7 +16,10 @@ struct Nano2App: App {
         
         WindowGroup {
             MainView()
-                .environment(\.managedObjectContext, coreDataStack.persistentContainer.viewContext)
+                .environment(
+                    \.managedObjectContext,
+                     coreDataStack.persistentContainer.viewContext
+                )
         }
         
     }

@@ -9,25 +9,17 @@ import SwiftUI
 
 struct MainSheetView: View {
     
-    @FetchRequest(sortDescriptors: []) var locationitems: FetchedResults<LocationItem>
     @Environment(\.managedObjectContext) private var viewContext
-    @State private var expanded = false
+    @FetchRequest(sortDescriptors: []) var locationitems: FetchedResults<LocationItem>
+    
     @StateObject var vm : MainSheetViewModel = MainSheetViewModel()
+    
     @State private var detents : Set<PresentationDetent> = [.small]
     @State private var currentDetent : PresentationDetent = .small
     @State private var saveLocation : Bool = false
     @State private var currentDetails : CurrentView = .none
-    
-    private func expandDetent() {
-        detents.insert(.large)
-        currentDetent = .large
-    }
-    
-    private func shrinkDetent() {
-        detents.insert(.small)
-        currentDetent = .small
-    }
-    
+    @State private var expanded = false
+    @State private var didAddNewLocation = false
     
     var body: some View {
         
@@ -39,7 +31,6 @@ struct MainSheetView: View {
                     
                     details
                     
-                    
                 } else {
                     
                     buttons
@@ -49,21 +40,9 @@ struct MainSheetView: View {
             }
             
         }
-        .mainSheetViewModified()
-        .animation(.easeInOut, value: expanded)
+        .mainSheetViewModified(value: expanded)
         .presentationDetents(detents, selection: $currentDetent)
-        .presentationCornerRadius(NumberConstant.defaultCornerRadiusSize)
-        .onChange(of: currentDetent, {
-            onDetentChange()
-        })
-        .alert(
-            StringConstant.saveLocationAlertViewText1,
-            isPresented: $saveLocation
-        ) {
-            
-            alert
-            
-        }
+        .onChange(of: currentDetent, onDetentChange)
         
     }
     
@@ -75,6 +54,39 @@ private extension MainSheetView {
         case settings
         case archives
         case none
+    }
+    
+    private func expandDetent() {
+        detents.insert(.large)
+        currentDetent = .large
+    }
+    
+    private func shrinkDetent() {
+        detents.insert(.small)
+        currentDetent = .small
+    }
+    
+    private func saveCurrentLocation() {
+        
+        let currentLocation : LocationItem = LocationItem(context: viewContext)
+        currentLocation.locationId = UUID()
+        currentLocation.timestamp = Date()
+        currentLocation.longitude = vm.getUserLongitude()
+        currentLocation.latitude = vm.getUserLatitude()
+        currentLocation.name = StringConstant.untitled
+        currentLocation.media = NSArray()
+        
+        do {
+            try viewContext.save()
+        } catch {
+            print(StringConstant.failedSave)
+            return
+        }
+        
+        didAddNewLocation = true
+        expandDetent()
+        currentDetails = .archives
+        
     }
     
     private func onDetentChange() {
@@ -98,22 +110,32 @@ private extension MainSheetView {
     }
     
     @ViewBuilder private var details: some View {
+        
         switch currentDetails {
         case .settings:
+            
             SettingsView(
                 onDismiss: shrinkDetent
             )
+            
         case .archives:
+
             ArchivesView(
                 onDismiss: shrinkDetent,
-                emptyAction: shrinkDetent
+                emptyAction: shrinkDetent,
+                newItemAdded: didAddNewLocation
             )
+            
         case .none:
-            VStack{}
+            
+            EmptyView()
+            
         }
+        
     }
     
     @ViewBuilder private var buttons: some View {
+        
         ThreeButtonView(
             locationsCount: locationitems.count,
             settingsColor: .gray,
@@ -121,28 +143,14 @@ private extension MainSheetView {
                 expandDetent()
                 currentDetails = .settings
             },
-            saveColor: .red,
+            saveColor: .accentColor,
             saveButtonAction: {
-                saveLocation.toggle()
+                saveCurrentLocation()
             },
             archivesColor: .gray,
             archivesButtonAction: {
                 expandDetent()
                 currentDetails = .archives
-            }
-        )
-    }
-    
-    @ViewBuilder private var alert: some View {
-        
-        InputAlertView(
-            placeholder: StringConstant.saveLocationAlertViewText2,
-            textInput: $vm.savedLocationName,
-            cancelAction: {
-                saveLocation = false
-            },
-            buttonAction: {
-                vm.saveCurrentLocation(context: viewContext)
             }
         )
         

@@ -9,10 +9,56 @@ import CoreData
 import PhotosUI
 import SwiftUI
 
-@MainActor
-public final class PicturesViewModel : ObservableObject {
+@MainActor final class PicturesViewModel : ObservableObject {
     
-    public init() {}
+    @MainActor final class ImageAttachment: ObservableObject, Identifiable {
+        
+        enum Status {
+            case loading
+            case finished(Image)
+            case failed(Error)
+            var isFailed: Bool {
+                return switch self {
+                case .failed: true
+                default: false
+                }
+            }
+        }
+        
+        enum LoadingError: Error {
+            case contentTypeNotSupported
+        }
+        
+        private let pickerItem: PhotosPickerItem
+        
+        @Published var imageStatus: Status?
+        
+        nonisolated var id: String {
+            pickerItem.identifier
+        }
+        
+        init(_ pickerItem: PhotosPickerItem) {
+            self.pickerItem = pickerItem
+        }
+        
+        func loadImage() async {
+            guard imageStatus == nil || imageStatus?.isFailed == true else { return }
+            imageStatus = .loading
+            do {
+                if let data = try await pickerItem.loadTransferable(type: Data.self),
+                   let uiImage = UIImage(data: data) {
+                    imageStatus = .finished(
+                        Image(uiImage: uiImage)
+                    )
+                } else {
+                    throw LoadingError.contentTypeNotSupported
+                }
+            } catch {
+                imageStatus = .failed(error)
+            }
+        }
+        
+    }
     
     @Published var selection = [PhotosPickerItem]() {
         didSet {
@@ -33,56 +79,13 @@ public final class PicturesViewModel : ObservableObject {
     
 }
 
-extension PicturesViewModel {
-    
-    @MainActor
-    final class ImageAttachment: ObservableObject, Identifiable {
-        
-        private let pickerItem: PhotosPickerItem
-        
-        @Published var imageStatus: Status?
-        
-        nonisolated var id: String {
-            pickerItem.identifier
+private extension PhotosPickerItem {
+
+    var identifier: String {
+        guard let identifier = itemIdentifier else {
+            fatalError(StringConstant.noLibrary)
         }
-        
-        init(_ pickerItem: PhotosPickerItem) {
-            self.pickerItem = pickerItem
-        }
-        
-        enum Status {
-            case loading
-            case finished(Image)
-            case failed(Error)
-            var isFailed: Bool {
-                return switch self {
-                case .failed: true
-                default: false
-                }
-            }
-        }
-        
-        enum LoadingError: Error {
-            case contentTypeNotSupported
-        }
-        
-        func loadImage() async {
-            guard imageStatus == nil || imageStatus?.isFailed == true else { return }
-            imageStatus = .loading
-            do {
-                if let data = try await pickerItem.loadTransferable(type: Data.self),
-                   let uiImage = UIImage(data: data) {
-                    imageStatus = .finished(
-                        Image(uiImage: uiImage)
-                    )
-                } else {
-                    throw LoadingError.contentTypeNotSupported
-                }
-            } catch {
-                imageStatus = .failed(error)
-            }
-        }
-        
+        return identifier
     }
     
 }
