@@ -135,6 +135,9 @@ struct LocationDetailsView: View {
             .onChange(of: locationDescription) {
                 saveButtonVisible = true
             }
+            .onChange(of: locationName) {
+                saveCurrentLocationName()
+            }
             .alert(
                 StringConstant.delete +
                 StringConstant.space +
